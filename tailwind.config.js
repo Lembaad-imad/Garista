@@ -11,9 +11,17 @@ export default {
         nexa :['Nexa', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
       },
+      zIndex: {
+        '60': '60',
+        '70': '70',
+        '100': '100',
+        '1000': '1000',
+      },
       colors: {
         'bgcolor': '#fffdfb',
-        'btncollor':'#db281c'
+        'btncollor':'#db281c',
+        "secondary":"#fff0f0",
+        "footer" :"#fff8eb"
       },
     },
   },

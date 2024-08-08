@@ -10,14 +10,17 @@ export default function SelectLangue() {
     {
       name: "English",
       icon: "https://img.icons8.com/color/48/great-britain-circular.png",
+      abbreviation :"Eng"
     },
     {
       name: "French",
       icon: "https://img.icons8.com/color/48/france-circular.png",
+       abbreviation :"Fr"
     },
     {
       name: "Arabic",
       icon: "https://img.icons8.com/color/48/saudi-arabia-circular.png",
+       abbreviation :"Ar"
     },
   ];
   const selectedLanguage = langues.find((langue) => langue.name.toLowerCase() === language.toLowerCase());
@@ -25,7 +28,7 @@ export default function SelectLangue() {
   return (
     <Menu as="div" className="relative inline-block text-left ">
       <div>
-      <MenuButton className="inline-flex justify-center gap-x-1.5 rounded-md bg-white px-2 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+      <MenuButton className="flex justify-center gap-x-1.5 rounded-md bg-white px-2 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
           {selectedLanguage.icon && (
             <img
               src={selectedLanguage.icon}
@@ -35,7 +38,10 @@ export default function SelectLangue() {
               className="mr-2"
             />
           )}
-          {selectedLanguage.name}
+          <p className="self-center">
+
+          {selectedLanguage.abbreviation}
+          </p>
           <ChevronDownIcon
             aria-hidden="true"
             className="-mr-1 h-5 w-5 text-gray-400"
@@ -73,7 +79,9 @@ export default function SelectLangue() {
                   </a>
 
                 </MenuItem>
-                <div className="border-t border-gray-200 my-1"></div>
+              
+                {langue.name !== "Arabic" && <div className="border-t border-gray-200 my-1"></div>}
+               
                 </>
               )
             

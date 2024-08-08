@@ -1,0 +1,39 @@
+[
+    {
+      "name": "Chicken Burger",
+      "image": "images/B1.svg",
+      "rating": 4.8,
+      "time": "15min",
+      "description": "200 gr chicken + cheese + Lettuce + tomato",
+      "price": 22.00
+     
+    },
+    {
+      "name": "Cheese Burger",
+      "image":"images/B2.svg",
+      "rating": 4.8,
+      "time": "15min",
+      "description": "200 gr meat + Lettuce + cheese + onion + tomato",
+      "price": 20.00
+     
+    },
+    {
+      "name": "Cheese burger",
+      "image":"images/B3.svg",
+      "rating": 4.8,
+      "time": "15min",
+      "description": "200 gr meat + Lettuce + cheese + onion + tomato",
+      "price": 20.00
+     
+    },
+    {
+      "name": "Chicken burger",
+      "image": "images/B4.svg",
+      "rating": 4.8,
+      "time": "15min",
+      "description": "200 gr chicken + cheese + Lettuce + tomato",
+      "price": 22.00
+     
+    }
+  ]
+  
