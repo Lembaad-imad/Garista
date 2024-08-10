@@ -1,10 +1,11 @@
 import React from 'react'
 import SelectLangue from './SelectLangue'
 import SearchInput from './SearchInput'
-import Carousel from './Carousel'
+import Carousel from './Carouselimages'
 import Categories from './Categories'
 import Products from './Products/Products'
 import BottomNav from './Products/BottomNav'
+import Carouselimages from './Carouselimages'
 
 const HomePage = () => {
   return (
@@ -15,12 +16,12 @@ const HomePage = () => {
                 <SelectLangue />
             </div>
         </div>
-        <div className=' text-center '>
+        <div className=' text-center flex flex-col gap-3 items-center '>
           <SearchInput />
+          <Carouselimages />
         </div>
-        <div className=''>
-          <Carousel />
-        </div>
+        {/* <div className=' bg bg-black w-screen h-52  flex justify-center items-center'>
+        </div> */}
         <div className='w-11/12 mx-auto flex flex-col gap-4 '>
           <p className='font-sans font-bold text-2xl '>Categories</p>
           <div>
