@@ -1,39 +1,155 @@
 [
-    {
+  {
       "name": "Chicken Burger",
       "image": "images/B1.svg",
       "rating": 4.8,
       "time": "15min",
       "description": "200 gr chicken + cheese + Lettuce + tomato",
-      "price": 22.00
-     
-    },
-    {
+      "price": 22.00,
+      "category": "Burger"
+  },
+  {
       "name": "Cheese Burger",
-      "image":"images/B2.svg",
+      "image": "images/B2.svg",
       "rating": 4.8,
       "time": "15min",
       "description": "200 gr meat + Lettuce + cheese + onion + tomato",
-      "price": 20.00
-     
-    },
-    {
-      "name": "Cheese burger",
-      "image":"images/B3.svg",
+      "price": 20.00,
+      "category": "Burger"
+  },
+  {
+      "name": "Double Cheese Burger",
+      "image": "images/B3.svg",
       "rating": 4.8,
-      "time": "15min",
-      "description": "200 gr meat + Lettuce + cheese + onion + tomato",
-      "price": 20.00
-     
-    },
-    {
-      "name": "Chicken burger",
+      "time": "20min",
+      "description": "300 gr meat + double cheese + Lettuce + onion + tomato",
+      "price": 25.00,
+      "category": "Burger"
+  },
+  {
+      "name": "Grilled Chicken Burger",
       "image": "images/B4.svg",
+      "rating": 4.9,
+      "time": "15min",
+      "description": "200 gr grilled chicken + cheese + Lettuce + tomato",
+      "price": 24.00,
+      "category": "Burger"
+  },
+  {
+      "name": "Pepperoni Pizza",
+      "image": "images/B1.svg",
+      "rating": 4.7,
+      "time": "25min",
+      "description": "Pepperoni + mozzarella + tomato sauce",
+      "price": 30.00,
+      "category": "Pizza"
+  },
+  {
+      "name": "Margherita Pizza",
+      "image": "images/B2.svg",
+      "rating": 4.6,
+      "time": "20min",
+      "description": "Mozzarella + basil + tomato sauce",
+      "price": 28.00,
+      "category": "Pizza"
+  },
+  {
+      "name": "Four Cheese Pizza",
+      "image": "images/B3.svg",
+      "rating": 4.8,
+      "time": "20min",
+      "description": "Mozzarella + gorgonzola + parmesan + ricotta",
+      "price": 32.00,
+      "category": "Pizza"
+  },
+  {
+      "name": "Pesto Pasta",
+      "image": "images/B4.svg",
+      "rating": 4.7,
+      "time": "15min",
+      "description": "Pasta + pesto sauce + parmesan",
+      "price": 22.00,
+      "category": "Pasta"
+  },
+  {
+      "name": "Carbonara Pasta",
+      "image": "images/B1.svg",
       "rating": 4.8,
       "time": "15min",
-      "description": "200 gr chicken + cheese + Lettuce + tomato",
-      "price": 22.00
-     
-    }
-  ]
-  
+      "description": "Pasta + egg yolk + parmesan + pancetta",
+      "price": 24.00,
+      "category": "Pasta"
+  },
+  {
+      "name": "Caesar Salad",
+      "image": "images/B2.svg",
+      "rating": 4.5,
+      "time": "10min",
+      "description": "Romaine lettuce + parmesan + croutons + Caesar dressing",
+      "price": 18.00,
+      "category": "Salad"
+  },
+  {
+      "name": "Greek Salad",
+      "image": "images/B3.svg",
+      "rating": 4.6,
+      "time": "10min",
+      "description": "Tomato + cucumber + olives + feta cheese",
+      "price": 18.00,
+      "category": "Salad"
+  },
+  {
+      "name": "Chocolate Cake",
+      "image": "images/B4.svg",
+      "rating": 4.9,
+      "time": "5min",
+      "description": "Rich chocolate cake + chocolate ganache",
+      "price": 15.00,
+      "category": "Dessert"
+  },
+  {
+      "name": "Tiramisu",
+      "image": "images/B1.svg",
+      "rating": 4.8,
+      "time": "5min",
+      "description": "Espresso-soaked ladyfingers + mascarpone cream + cocoa powder",
+      "price": 16.00,
+      "category": "Dessert"
+  },
+  {
+      "name": "Grilled Salmon",
+      "image": "images/B2.svg",
+      "rating": 4.9,
+      "time": "20min",
+      "description": "Grilled salmon + lemon butter sauce",
+      "price": 35.00,
+      "category": "Seafood"
+  },
+  {
+      "name": "Shrimp Scampi",
+      "image": "images/B3.svg",
+      "rating": 4.8,
+      "time": "20min",
+      "description": "Shrimp + garlic + white wine + butter sauce",
+      "price": 32.00,
+      "category": "Seafood"
+  },
+  {
+      "name": "Mojito",
+      "image": "images/B4.svg",
+      "rating": 4.7,
+      "time": "5min",
+      "description": "Rum + mint + lime + soda water",
+      "price": 12.00,
+      "category": "Drinks"
+  },
+  {
+      "name": "Lemonade",
+      "image": "images/B1.svg",
+      "rating": 4.5,
+      "time": "5min",
+      "description": "Freshly squeezed lemons + sugar + water",
+      "price": 8.00,
+      "category": "Drinks"
+  }
+]

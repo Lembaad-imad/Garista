@@ -37,12 +37,12 @@ const Carouselimages = () => {
                 {slides.map((slide, index) => (
                     <div
                         key={index}
-                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+                        className={`absolute inset-0 transition-opacity duration-300 ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
                     >
                         <img
                             src={slide}
                             alt={`Slide ${index + 1}`}
-                            className="w-full h-full object-cover rounded-xl"
+                            className="w-screen h-full object-cover rounded-xl"
                         />
                     </div>
                 ))}
