@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="h-64 rounded-xl p-3 bg-white flex flex-col items-center shadow-md">
+    <div className="h-64 rounded-xl p-3  bg-white flex flex-col items-center shadow-md">
       <div className="flex items-center justify-between w-full">
         <div className="flex w-screen justify-between items-center">
           <span className="text-yellow-500">★ {product.rating}</span>
