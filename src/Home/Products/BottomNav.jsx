@@ -7,9 +7,9 @@ const BottomNav = () => {
   const [activeIcon, setActiveIcon] = useState('home');
 
   return (
-    <div className="fixed navigation bottom-0 bg-black left-0 right-0 p-4 shadow-md">
+    <div className="fixed navigation bottom-0  left-0 right-0 p-4 shadow-md">
       <div className="menu w-full h-24 flex justify-center items-center">
-        <div className={`bill ${activeIcon === 'notifications' ? 'bg-red-500' : 'bg-gray-500'}`}>
+        <div className='bill bg-red-500'>
           <i></i>
           <FontAwesomeIcon icon={faBellConcierge} className="text-2xl text-white" />
         </div>
@@ -20,9 +20,9 @@ const BottomNav = () => {
           <FontAwesomeIcon icon={faHouse} className={`text-2xl  ${activeIcon === 'home' ? 'text-red-500' : 'text-gray-400'}`} />
           <span className={`text-xs ${activeIcon === 'home' ? 'text-red-500' : 'text-gray-400'}`}>Home</span>
         </div>
-        <div className="flex flex-col z-10" onClick={() => setActiveIcon('search')}>
+        <div className="flex flex-col z-10  " onClick={() => setActiveIcon('search')}>
           <FontAwesomeIcon icon={faMagnifyingGlass} className={`text-2xl mr-5 z-10 ${activeIcon === 'search' ? 'text-red-500' : 'text-gray-400'}`} />
-          <span className={`text-xs ${activeIcon === 'search' ? 'text-red-500' : 'text-gray-400'}`}>Search</span>
+          <span className={`text-xs z-10 ${activeIcon === 'search' ? 'text-red-500' : 'text-gray-400'}`}>Search</span>
         </div>
         <div className="flex flex-col items-center" onClick={() => setActiveIcon('cart')}>
           <FontAwesomeIcon icon={faBagShopping} className={`text-2xl ${activeIcon === 'cart' ? 'text-red-500' : 'text-gray-400'}`} />
