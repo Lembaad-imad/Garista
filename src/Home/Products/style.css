@@ -45,7 +45,9 @@ background :#fff8eb;
     background-color: #fff8eb;
     border-top-right-radius: 20px;
     box-shadow: 4.5px -5.5px white;
+    z-index: -100;
 }
+
 .bill i::after {
     content: '';
     position: absolute;
