@@ -23,6 +23,7 @@ export default function SelectLangue() {
        abbreviation :"Ar"
     },
   ];
+  // console.log('')
   const selectedLanguage = langues.find((langue) => langue.name.toLowerCase() === language.toLowerCase());
  
   return (

@@ -4,7 +4,7 @@ import SearchInput from './SearchInput'
 import Carousel from './Carouselimages'
 import Categories from './Categories'
 import Products from './Products/Products'
-import BottomNav from './Products/BottomNav'
+import BottomNav from '../layout/BottomNav'
 import Carouselimages from './Carouselimages'
 
 const HomePage = () => {

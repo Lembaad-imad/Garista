@@ -9,6 +9,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import SearchPage from './searchPage/SearchPage'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/loadingpage" element={<LoadingPage />} />
         <Route path="/choselanguage" element={<ChoseLanguage />} />
         <Route path="/hompage" element={<HomePage />} />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
     </Router>
     </>

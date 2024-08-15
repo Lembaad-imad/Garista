@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import './style.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping, faBellConcierge, faCircleInfo, faHouse, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const BottomNav = () => {
   const [activeIcon, setActiveIcon] = useState('home');
+  const navigate = useNavigate();
 
   return (
     <div className="fixed navigation bottom-0 z-100 left-0 right-0 p-4 shadow-md">
@@ -20,8 +22,8 @@ const BottomNav = () => {
           <FontAwesomeIcon icon={faHouse} className={`text-2xl  ${activeIcon === 'home' ? 'text-red-500' : 'text-gray-400'}`} />
           <span className={`text-xs ${activeIcon === 'home' ? 'text-red-500' : 'text-gray-400'}`}>Home</span>
         </div>
-        <div className="flex flex-col   " onClick={() => setActiveIcon('search')}>
-          <FontAwesomeIcon icon={faMagnifyingGlass} className={`text-2xl search mr-5  ${activeIcon === 'search' ? 'text-red-500' : 'text-gray-400'}`} />
+        <div className="flex flex-col  mr-5 " onClick={() => {setActiveIcon('search') ; navigate('/search')}}>
+          <FontAwesomeIcon icon={faMagnifyingGlass} className={`text-2xl search   ${activeIcon === 'search' ? 'text-red-500' : 'text-gray-400'}`} />
           <span className={`text-xs  ${activeIcon === 'search' ? 'text-red-500' : 'text-gray-400'}`}>Search</span>
         </div>
         <div className="flex flex-col items-center" onClick={() => setActiveIcon('cart')}>
