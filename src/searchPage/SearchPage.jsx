@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom'
 const SearchPage = () => {
     const navigate = useNavigate();
     return (
-        <div className='bg-bgcolor h-screen items-center p-1 flex flex-col gap-3 justify-center'>
+        <div className='bg-bgcolor  items-center p-1 flex flex-col gap-3 justify-center'>
         
             <div className=' text-center flex  gap-3 items-center w-11/12 justify-center mt-5'>
                 <div className='w-10 h-10 border rounded-md flex justify-center items-center border-black'
