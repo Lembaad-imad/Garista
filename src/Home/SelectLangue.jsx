@@ -1,11 +1,12 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useLocation } from "react-router-dom";
+import useStore from "../Zustand/Store";
 
 export default function SelectLangue() {
   const location = useLocation();
-  const { language } = location.state || {};
-
+  const {selectedLanguage} = useStore()
+  console.log(selectedLanguage)
   const langues = [
     {
       name: "English",
@@ -23,17 +24,16 @@ export default function SelectLangue() {
        abbreviation :"Ar"
     },
   ];
-  // console.log('')
-  const selectedLanguage = langues.find((langue) => langue.name.toLowerCase() === language.toLowerCase());
- 
+  const selectedLanguages = langues.find((langue) => langue.name.toLowerCase() === selectedLanguage.toLowerCase());
+ console.log(selectedLanguages)
   return (
     <Menu as="div" className="relative inline-block text-left ">
       <div>
       <MenuButton className="flex justify-center gap-x-1.5 rounded-md bg-white px-2 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-          {selectedLanguage.icon && (
+          {selectedLanguages.icon && (
             <img
-              src={selectedLanguage.icon}
-              alt={selectedLanguage.name}
+              src={selectedLanguages.icon}
+              alt={selectedLanguages.name}
               width="24"
               height="24"
               className="mr-2"
@@ -41,7 +41,7 @@ export default function SelectLangue() {
           )}
           <p className="self-center">
 
-          {selectedLanguage.abbreviation}
+          {selectedLanguages.abbreviation}
           </p>
           <ChevronDownIcon
             aria-hidden="true"

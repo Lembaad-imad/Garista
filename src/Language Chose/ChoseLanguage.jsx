@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
+import useStore from '../Zustand/Store';
 const ChoseLanguage = () => {
     const navigate = useNavigate();
   const logo = "/images/Garista icon (5) 1.svg";
   const [selectedLanguage, setSelectedLanguage] = useState("");
-
+  const setLanguageInStore = useStore((state) => state.setSelectedLanguage);
   const handleLanguageChange = (language) => {
+    setLanguageInStore(language);
     setSelectedLanguage(language);
   };
   const handleContinue = () => {
-    navigate('/hompage', { state: { language: selectedLanguage } });
+    navigate('/hompage');
   };
   return (
     <div className="flex flex-col justify-around h-screen items-center  bg-bgcolor">

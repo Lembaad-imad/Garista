@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import './style.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping, faBellConcierge, faCircleInfo, faHouse, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 
 const BottomNav = () => {
-  const [activeIcon, setActiveIcon] = useState('home');
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const getActiveIcon = () => {
+    if (location.pathname === '/search') return 'search';
+
+    return 'hompage'; 
+  };
+
+  const activeIcon = getActiveIcon();
 
   return (
     <div className="fixed navigation bottom-0 z-100 left-0 right-0 p-4 shadow-md">
@@ -18,11 +26,11 @@ const BottomNav = () => {
       </div>
 
       <div className="fixed bottom-3 z-10 left-0 right-0 flex justify-around items-center">
-        <div className="flex flex-col items-center" onClick={() => setActiveIcon('home')}>
-          <FontAwesomeIcon icon={faHouse} className={`text-2xl  ${activeIcon === 'home' ? 'text-red-500' : 'text-gray-400'}`} />
+        <div className="flex flex-col items-center" onClick={() => navigate('/hompage')}>
+          <FontAwesomeIcon icon={faHouse} className={`text-2xl  ${activeIcon === 'hompage' ? 'text-red-500' : 'text-gray-400'}`} />
           <span className={`text-xs ${activeIcon === 'home' ? 'text-red-500' : 'text-gray-400'}`}>Home</span>
         </div>
-        <div className="flex flex-col  mr-5 " onClick={() => {setActiveIcon('search') ; navigate('/search')}}>
+        <div className="flex flex-col  mr-5 " onClick={() =>  navigate('/search')}>
           <FontAwesomeIcon icon={faMagnifyingGlass} className={`text-2xl search   ${activeIcon === 'search' ? 'text-red-500' : 'text-gray-400'}`} />
           <span className={`text-xs  ${activeIcon === 'search' ? 'text-red-500' : 'text-gray-400'}`}>Search</span>
         </div>

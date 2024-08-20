@@ -14,12 +14,8 @@ const SearchPage = () => {
     return (
         <div className='bg-bgcolor  items-center p-1 flex flex-col gap-3 justify-center'>
         
-            <div className=' text-center flex  gap-3 items-center w-11/12 justify-center mt-5'>
-                <div className='w-10 h-10 border rounded-md flex justify-center items-center border-black'
-                    onClick={() => navigate(-1)}
-                >
-                    <MdOutlineKeyboardArrowLeft className='text-3xl' />
-                    </div>
+            <div className=' w-11/12 mt-5'>
+            
               <SearchInput />
             </div>
             
