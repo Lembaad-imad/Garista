@@ -10,8 +10,15 @@ const SearchInput = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const handleInputChange = (e) => {
+
     setSearchTerm(e.target.value);
     setShowSuggestions(e.target.value.length > 0);
+  };
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      console.log('Searching for:', searchTerm);
+      navigate(-1)
+    }
   };
   const isHomePage = location.pathname === '/hompage';
   return (
@@ -31,13 +38,14 @@ const SearchInput = () => {
           placeholder="Search for food..."
           value={searchTerm}
           onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
           className="bg-transparent w-full font-roboto text-gray-700 focus:outline-none"
         />
       </div>
 
       {showSuggestions && (
-        <div className={`absolute w-screen self-start  mt-2  bg-white shadow-lg  ${isHomePage ? 'top-28 z-10':'top-16 z-10'}`} >
-          <div className='w-full h-2 bg-white'></div>
+        <div className={`absolute w-screen self-start  mt-2  bg-white shadow-lg  ${isHomePage ? 'top-28 z-10':'top-14 z-10'}`} >
+          <div className='w-full h-2 bg-white '></div>
           <ul>
             {suggestions
               .filter((item) =>
