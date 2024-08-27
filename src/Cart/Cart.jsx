@@ -79,7 +79,7 @@ const Cart = () => {
       !proccesShow&& <ProcessIndicator />
      }
       <div
-        className="overflow-y-scroll w-11/12 p-2 h-[550px] ml-4 mt-6"
+        className="overflow-y-scroll w-11/12 p-2 h-[400px] ml-4 mt-6"
         style={noScrollbar}
       >
         {productshop.length === 0 ? (
@@ -179,7 +179,7 @@ const Cart = () => {
           </div>
         )}
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full fixed bottom-16">
         <div className="w-11/12 p-2 ml-4 mt-4 flex justify-between items-center">
           <p className="text-xl font-sans font-bold text-black">Total</p>
           <p className="text-xl font-sans text-black font-bold">
