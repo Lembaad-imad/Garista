@@ -10,6 +10,8 @@ import {
   Link
 } from 'react-router-dom';
 import SearchPage from './searchPage/SearchPage'
+import InfoPage from './Infos pages/InfoPage'
+import Cart from './Cart/Cart'
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
         <Route path="/choselanguage" element={<ChoseLanguage />} />
         <Route path="/hompage" element={<HomePage />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/info" element={<InfoPage />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
     </>

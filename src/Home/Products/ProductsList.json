@@ -6,7 +6,8 @@
       "time": "15min",
       "description": "200 gr chicken + cheese + Lettuce + tomato",
       "price": 22.00,
-      "category": "Burger"
+      "category": "Burger",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
   },
   {
       "name": "Cheese Burger",
@@ -15,7 +16,9 @@
       "time": "15min",
       "description": "200 gr meat + Lettuce + cheese + onion + tomato",
       "price": 20.00,
-      "category": "Burger"
+      "category": "Burger",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Double Cheese Burger",
@@ -24,7 +27,9 @@
       "time": "20min",
       "description": "300 gr meat + double cheese + Lettuce + onion + tomato",
       "price": 25.00,
-      "category": "Burger"
+      "category": "Burger",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Grilled Chicken Burger",
@@ -33,7 +38,9 @@
       "time": "15min",
       "description": "200 gr grilled chicken + cheese + Lettuce + tomato",
       "price": 24.00,
-      "category": "Burger"
+      "category": "Burger",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Pepperoni Pizza",
@@ -42,7 +49,9 @@
       "time": "25min",
       "description": "Pepperoni + mozzarella + tomato sauce",
       "price": 30.00,
-      "category": "Pizza"
+      "category": "Pizza",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Margherita Pizza",
@@ -51,7 +60,9 @@
       "time": "20min",
       "description": "Mozzarella + basil + tomato sauce",
       "price": 28.00,
-      "category": "Pizza"
+      "category": "Pizza",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Four Cheese Pizza",
@@ -60,7 +71,9 @@
       "time": "20min",
       "description": "Mozzarella + gorgonzola + parmesan + ricotta",
       "price": 32.00,
-      "category": "Pizza"
+      "category": "Pizza",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Pesto Pasta",
@@ -69,7 +82,9 @@
       "time": "15min",
       "description": "Pasta + pesto sauce + parmesan",
       "price": 22.00,
-      "category": "Pasta"
+      "category": "Pasta",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Carbonara Pasta",
@@ -78,7 +93,10 @@
       "time": "15min",
       "description": "Pasta + egg yolk + parmesan + pancetta",
       "price": 24.00,
-      "category": "Pasta"
+      "category": "Pasta",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
+
   },
   {
       "name": "Caesar Salad",
@@ -87,7 +105,9 @@
       "time": "10min",
       "description": "Romaine lettuce + parmesan + croutons + Caesar dressing",
       "price": 18.00,
-      "category": "Salad"
+      "category": "Salad",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Greek Salad",
@@ -96,7 +116,9 @@
       "time": "10min",
       "description": "Tomato + cucumber + olives + feta cheese",
       "price": 18.00,
-      "category": "Salad"
+      "category": "Salad",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Chocolate Cake",
@@ -105,7 +127,9 @@
       "time": "5min",
       "description": "Rich chocolate cake + chocolate ganache",
       "price": 15.00,
-      "category": "Dessert"
+      "category": "Dessert",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Tiramisu",
@@ -114,7 +138,9 @@
       "time": "5min",
       "description": "Espresso-soaked ladyfingers + mascarpone cream + cocoa powder",
       "price": 16.00,
-      "category": "Dessert"
+      "category": "Dessert",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Grilled Salmon",
@@ -123,7 +149,9 @@
       "time": "20min",
       "description": "Grilled salmon + lemon butter sauce",
       "price": 35.00,
-      "category": "Seafood"
+      "category": "Seafood",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Shrimp Scampi",
@@ -132,7 +160,9 @@
       "time": "20min",
       "description": "Shrimp + garlic + white wine + butter sauce",
       "price": 32.00,
-      "category": "Seafood"
+      "category": "Seafood",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Mojito",
@@ -141,7 +171,9 @@
       "time": "5min",
       "description": "Rum + mint + lime + soda water",
       "price": 12.00,
-      "category": "Drinks"
+      "category": "Drinks",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   },
   {
       "name": "Lemonade",
@@ -150,6 +182,8 @@
       "time": "5min",
       "description": "Freshly squeezed lemons + sugar + water",
       "price": 8.00,
-      "category": "Drinks"
+      "category": "Drinks",
+      "des":"Crispy seasoned chicken breast, topped with mandatory melted cheese and piled onto soft rolls with onion."
+
   }
 ]
