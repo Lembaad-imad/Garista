@@ -40,6 +40,15 @@ const Cart = () => {
     }, 0);
     setTotalSum(sum);
   }, [productshop]);
+  useEffect(() => {
+    if (!proccesShow) {
+      const timer = setTimeout(() => {
+        setProccesShow(true);
+      }, 10000); 
+  
+      return () => clearTimeout(timer); 
+    }
+  }, [proccesShow]);
 
   const handleIncrement = (index) => {
     const updatedProducts = [...productshop];
