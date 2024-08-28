@@ -28,6 +28,7 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/info" element={<InfoPage />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/details" element={<Cart />} />
       </Routes>
     </Router>
     </>

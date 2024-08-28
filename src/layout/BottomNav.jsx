@@ -18,7 +18,8 @@ const BottomNav = () => {
   const getActiveIcon = () => {
     if (location.pathname === '/search') return 'search';
     if (location.pathname === '/cart') return 'cart';
-    return 'homepage';
+    if (location.pathname === '/details') return 'details';
+    return 'hompage';
   };
   const [navButtons, setNavbuttons] = useState(false);
 
@@ -56,7 +57,7 @@ const BottomNav = () => {
         </div>
 
         <div className="fixed bottom-3 z-10 left-0 right-0 flex justify-around items-center">
-          <div className="flex flex-col items-center" onClick={() => navigate('/homepage')}>
+          <div className="flex flex-col items-center" onClick={() => navigate('/hompage')}>
             <FontAwesomeIcon icon={faHouse} className={`text-2xl ${activeIcon === 'homepage' ? 'text-red-500' : 'text-gray-400'}`} />
             <span className={`text-xs ${activeIcon === 'homepage' ? 'text-red-500' : 'text-gray-400'}`}>Home</span>
           </div>
@@ -68,9 +69,9 @@ const BottomNav = () => {
             <FontAwesomeIcon icon={faBagShopping} className={`text-2xl cart ${activeIcon === 'cart' ? 'text-red-500' : 'text-gray-400'}`} />
             <span className={`text-xs ${activeIcon === 'cart' ? 'text-red-500' : 'text-gray-400'}`}>Cart</span>
           </div>
-          <div className="flex flex-col items-center" onClick={() => navigate('/info')}>
-            <FontAwesomeIcon icon={faCircleInfo} className={`text-2xl ${activeIcon === 'info' ? 'text-red-500' : 'text-gray-400'}`} />
-            <span className={`text-xs ${activeIcon === 'info' ? 'text-red-500' : 'text-gray-400'}`}>Info</span>
+          <div className="flex flex-col items-center" onClick={() => navigate('/details')}>
+            <FontAwesomeIcon icon={faCircleInfo} className={`text-2xl ${activeIcon === 'details' ? 'text-red-500' : 'text-gray-400'}`} />
+            <span className={`text-xs ${activeIcon === 'details' ? 'text-red-500' : 'text-gray-400'}`}>Info</span>
           </div>
         </div>
       </div>
