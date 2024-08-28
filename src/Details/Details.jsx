@@ -3,7 +3,7 @@ import BottomNav from "../layout/BottomNav";
 
 const Details = () => {
   return (
-    <div className="h-screen w-full bg-white">
+    <div className=" h-screen w-full bg-white">
       <div className="relative">
         <div className="bg-[#f5f5f5] h-[300px] flex items-center justify-center">
           <img
@@ -18,7 +18,7 @@ const Details = () => {
         </div>
       </div>
 
-      <div className=" bg-white relative  p-6">
+      <div className=" bg-white h-[650px] relative  p-6">
         <div className="w-full flex justify-between">
           <p className="font-sans text-2xl font-bold">Garista Restaurant</p>
         </div>
@@ -60,48 +60,48 @@ const Details = () => {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col justify-between ">
+        <div className="mt-6 flex flex-col  justify-between ">
           <p className="text-xl font-bold">Follow Us :</p>
-          <div className="flex mt-3 space-x-4">
+          <div className="flex mt-3  w-full justify-between">
             <div className="flex flex-col items-center">
             <img
               src="images/fb.svg"
               alt="Facebook"
-              className="w-10 h-10"
+              className="w-9 h-9"
             />
-            <p>Facebook</p>
+            <p className="text-sm font-bold">Facebook</p>
             </div>
             <div className="flex flex-col items-center">
             <img
               src="images/insta.svg"
               alt="Instagram"
-             className="w-10 h-10"
+             className="w-9 h-9"
             />
-            <p>Instagram</p>
+            <p className="text-sm font-bold">Instagram</p>
             </div>
             <div className="flex flex-col items-center">
             <img
               src="images/tiktok.svg"
               alt="Tiktok"
-              className="w-10 h-10"
+              className="w-9 h-9"
             />
-            <p>Tiktok</p>
+            <p className="text-sm font-bold">Tiktok</p>
             </div>
             <div className="flex flex-col items-center">
             <img
               src="images/snap.svg"
               alt="Snapchat"
-              className="w-10 h-10"
+              className="w-9 h-9"
             />
-            <p>Snapchat</p>
+            <p className="text-sm font-bold">Snapchat</p>
             </div>
             <div className="flex flex-col items-center">
             <img
               src="images/youtube.svg"
               alt="Youtube"
-               className="w-10 h-10"
+               className="w-9 h-9"
             />
-            <p>Youtube</p>
+            <p className="text-sm font-bold">Youtube</p>
             </div>
            
           </div>

@@ -71,7 +71,7 @@ const Cart = () => {
 
   return (
     <div>
-      <div className="flex mt-5 w-11/12 ml-5 p-1">
+      <div className="flex  mt-5 w-11/12 ml-5 p-1">
         <div
           className="w-10 h-10 border rounded-md flex justify-center items-center border-black"
           onClick={() => navigate(-1)}
