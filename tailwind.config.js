@@ -26,6 +26,17 @@ module.exports = withMT({
         "footer" :"#fff8eb"
       },
     },
+    screens: {
+      'hsm': '375px',
+
+      'hmd': '300x',
+
+      'hlg': '350px',
+
+      'hxl': '400px',
+
+      'h2xl': '450px',
+    }
   },
   plugins: [],
 })

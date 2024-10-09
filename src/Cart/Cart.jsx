@@ -16,8 +16,10 @@ const Cart = () => {
   const [open, setOpen] = useState(false);
   const [confirme, setConfirme] = useState(true);
   const [proccesShow, setProccesShow] = useState(true);
+  const [detailsShow, setDetailsShow] = useState(true);
   const [totalSum, setTotalSum] = useState(0);
-
+  const [activeProductIndex, setActiveProductIndex] = useState(null);
+  const [showDetailsIndex, setShowDetailsIndex] = useState(null);
   const noScrollbar = {
     msOverflowStyle: "none",
     scrollbarWidth: "none",
@@ -44,9 +46,9 @@ const Cart = () => {
     if (!proccesShow) {
       const timer = setTimeout(() => {
         setProccesShow(true);
-      }, 10000); 
-  
-      return () => clearTimeout(timer); 
+      }, 10000);
+
+      return () => clearTimeout(timer);
     }
   }, [proccesShow]);
 
@@ -68,35 +70,43 @@ const Cart = () => {
   const handleRemoveProduct = (name) => {
     setProductshop(productshop.filter((item) => item.name !== name));
   };
-
+  const HandleCliclProduct = (index) => {
+    setActiveProductIndex(activeProductIndex === index ? null : index);
+  };
+  const handleShowDetails = (index) => {
+    setShowDetailsIndex(showDetailsIndex === index ? null : index);
+  };
   return (
     <div>
-      <div className="flex  mt-5 w-11/12 ml-5 p-1">
-        <div
-          className="w-10 h-10 border rounded-md flex justify-center items-center border-black"
-          onClick={() => navigate(-1)}
-        >
-          <MdOutlineKeyboardArrowLeft className="text-3xl" />
-        </div>
-        <p className="flex-1 text-center mr-5 font-sans text-2xl font-bold">
+      <div className="flex flex-col justify-center  mt-5 w-11/12 ml-5 p-1">
+        <p className="flex-1  text-center text-gray-800  font-sans text-2xl font-bold">
           My Cart
         </p>
+        {!proccesShow && <ProcessIndicator />  }
+       
+        <div className="w-full  self-center mt-6 flex justify-between">
+          <p className="font-bold text-lg">Table:003</p>
+          <p
+            className={`font-semibold text-lg text-btncollor underline underline-offset-4 ${
+              productshop.length === 0 ? "opacity-50" : ""
+            }`}
+          >
+            Clear Card
+          </p>
+        </div>
       </div>
-      <div className="h-[1px] mt-7 bg-gray-300"></div>
       <BottomNav />
-     {
-      !proccesShow&& <ProcessIndicator />
-     }
+ 
       <div
-        className="overflow-y-scroll w-11/12 p-2 h-[400px] ml-4 mt-6"
-        style={noScrollbar}
-      >
+  className="overflow-y-scrollbg-red-300  max-h-[calc(110vh-430px)]  w-11/12 p-1 ml-4 mt-6"
+  style={noScrollbar}
+>
         {productshop.length === 0 ? (
-          <div className="text-center mt-20">
+          <div className="flex flex-col  justify-center items-center w-full text-center">
             <img
               src="images/Group.svg"
               alt="Cart is empty"
-              className="mx-auto"
+              className="mx-auto w-36 "
             />
             <p className="text-xl font-sans font-bold mt-4">
               Your Cart is Empty
@@ -105,7 +115,7 @@ const Cart = () => {
               Looks like you haven't made your choice yet...
             </p>
             <p
-              className="text-lg text-red-500 font-bold mt-6"
+              className="text-lg text-red-500 font-bold mt-6 cursor-pointer"
               onClick={() => navigate("/hompage")}
             >
               + Add more items
@@ -114,81 +124,103 @@ const Cart = () => {
         ) : (
           <ul>
             {productshop.map((item, index) => (
-              <li
-                key={index}
-                className="flex justify-between mb-1 mt-5 hover:bg-gray-100"
-              >
-                <div className="bg-[#ffd9d7] p-2 h-28 rounded-2xl w-36 border-2 border-pink-200">
-                  <img
-                    src={item.image}
-                    className="items-center self-center justify-center mt-2 w-32"
-                    alt={item.name}
-                  />
-                </div>
-                <section className="flex flex-col gap-1 text-right w-11/12">
-                  <div className="flex text-right justify-between w-11/12 ml-4">
-                    <div className="p-1">
-                      <p className="font-bold font-roboto text-2xl">
-                        {item.name}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-1 ml-5">
-                    <p className="text-red-600 font-sans text-xl font-bold">
-                      $ {item.price.toFixed(2).slice(0, 2) * item.quantity}
-                      <span className="text-lg">
-                        {item.price.toFixed(2).slice(2)}
-                      </span>
-                    </p>
-                  </div>
-
-                  <div className="flex text-right justify-between w-11/12 ml-5">
-                    <div className="flex items-center rounded-full">
-                      <button
-                        className="bg-red-500 rounded-full flex justify-center items-center w-6 h-6 text-white"
-                        onClick={() => handleDecrement(index)}
-                      >
-                        <img src="/images/Line.svg" alt="minus" />
-                      </button>
-                      <p className="text-black text-xl mx-4">
-                        {item.quantity || 1}
-                      </p>
-                      <button
-                        className="bg-red-500 rounded-full flex justify-center items-center w-6 h-6 text-white"
-                        onClick={() => handleIncrement(index)}
-                      >
-                        <img src="/images/plus.svg" alt="plus" />
-                      </button>
-                    </div>
+              <li key={index} onClick={() => HandleCliclProduct(index)}>
+                <div className="flex flex-col gap-2">
+                  <div className="flex justify-between mb-1 mt-5 hover:bg-gray-100">
                     <div>
-                      <div className="flex gap-5">
-                        <p className="text-lg text-gray-400">
-                          {item.selectedOption.split(" ")[0]}
-                        </p>
-                        <div
-                          className="self-center"
-                          onClick={() => handleRemoveProduct(item.name)}
-                        >
-                          <img
-                            src="images/cross.svg"
-                            className="text-left font-bold text-2xl"
-                          />
+                      <img
+                        src={item.image}
+                        className="items-center self-center justify-center rounded-2xl mt-2 w-40"
+                        alt={item.name}
+                      />
+                    </div>
+                    <section className="flex flex-col gap-2 text-right w-11/12">
+                      <div className="flex text-right justify-between w-11/12 ml-4">
+                        <div className="p-1 flex justify-between w-full">
+                          <p className="font-normal font-roboto text-xl">
+                            {item.name}
+                          </p>
+                          <div
+                            className="self-center"
+                            onClick={(e) => {
+                              handleRemoveProduct(item.name);
+                              e.stopPropagation();
+                            }}
+                          >
+                            <img
+                              src="images/cross.svg"
+                              className="text-left font-bold text-red-600 text-2xl"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
+                      <div className="flex justify-between ml-5">
+                        <p className="text-red-600 font-sans text-lg font-semibold">
+                          {item.price.toFixed(2) * item.quantity} MAD
+                        </p>
+                        <div className="flex items-center bg-[#FFF1E5] rounded-full w-24 border-2 border-red-200 p-1">
+                          <button
+                            className="bg-red-500 rounded-full flex justify-center items-center w-6 h-6 text-white"
+                            onClick={(e) => {
+                              handleDecrement(index);
+                              e.stopPropagation();
+                            }}
+                          >
+                            <img src="/images/Line.svg" alt="minus" />
+                          </button>
+                          <p className="text-black text-xl font-semibold mx-4">
+                            {" "}
+                            {item.quantity || 1}
+                          </p>
+                          <button
+                            className="bg-red-500 rounded-full flex justify-center items-center w-6 h-6 text-white"
+                            onClick={(e) => {
+                              handleIncrement(index);
+                              e.stopPropagation();
+                            }}
+                          >
+                            <img src="/images/plus.svg" alt="plus" />
+                          </button>
+                        </div>
+                      </div>
+                    </section>
                   </div>
-                </section>
+                  {activeProductIndex === index && (
+        <div className="flex flex-col items-start gap-2 text-right w-11/12 transition-all duration-300 ease-out transform">
+          <div className="flex justify-between w-full cursor-pointer" 
+           onClick={(e) => {handleShowDetails(index);e.stopPropagation()}} 
+          >
+            <p>Order Details</p>
+            <svg
+              className="w-6 h-6 transition-transform duration-300 ease-out"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              style={{ transform: showDetailsIndex === index ? 'rotate(180deg)' : 'rotate(0deg)' }}
+             
+            >
+              <path d="M5.292 7.293a1 1 0 011.415 0L10 10.585l3.293-3.292a1 1 0 111.414 1.415l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.415z" />
+            </svg>
+          </div>
+
+          {/* Show additional details when "Show Details" is clicked */}
+          {showDetailsIndex === index && (
+            <div className="mt-2 text-left">
+              <p><strong className="text-gray-700">Sauce : </strong > <span  className="text-gray-400">Algerienne</span></p>
+              <p><strong className="text-gray-700">Ingredients : </strong> <span  className="text-gray-400">Onion - tomate</span></p>
+              <p><strong className="text-gray-700">Comment : </strong><span  className="text-gray-400">Salam 3afak mataboch bzf o bghit maticha khedra</span></p>
+            </div>
+          )}
+        </div>
+      )}
+                </div>
               </li>
             ))}
           </ul>
         )}
-        {productshop.length !== 0 && (
-          <div className="mt-6" onClick={() => navigate("/hompage")}>
-            <p className="text-lg text-red-500 font-bold">+ Add more items</p>
-          </div>
-        )}
       </div>
-      <div className="flex flex-col w-full fixed bottom-16">
+        <div className="border-b-[1px] fixed bottom-52 border-gray-400 w-full mx-auto "></div>
+      <div className="flex flex-col w-full  fixed bottom-16">
         <div className="w-11/12 p-2 ml-4 mt-4 flex justify-between items-center">
           <p className="text-xl font-sans font-bold text-black">Total</p>
           <p className="text-xl font-sans text-black font-bold">
@@ -208,7 +240,7 @@ const Cart = () => {
           Checkout
         </button>
       </div>
-      <Dialog open={open} onClose={setOpen} className="relative  z-10">
+      {/* <Dialog open={open} onClose={setOpen} className="relative  z-10">
         <DialogBackdrop
           transition
           className="fixed inset-0 bg-black bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
@@ -259,15 +291,14 @@ const Cart = () => {
                             ? () => {
                                 navigate("/cart");
                                 setConfirme(false);
-                                console.log('co')
+                                console.log("co");
                               }
                             : () => {
                                 navigate("/cart");
                                 setConfirme(false);
-                               setProccesShow(false)
-                               setOpen(false)
-                               setProductshop([]);
-
+                                setProccesShow(false);
+                                setOpen(false);
+                                setProductshop([]);
                               }
                         }
                       >
@@ -289,7 +320,96 @@ const Cart = () => {
             </DialogPanel>
           </div>
         </div>
-      </Dialog>
+      </Dialog> */}
+          <Dialog open={open} onClose={setOpen} className="relative z-10">
+  <DialogBackdrop
+    transition
+    className="fixed inset-0 bg-black bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
+  />
+
+  <div className="fixed inset-0 z-10 w-screen flex items-center justify-center overflow-y-auto">
+    <div className="flex min-h-screen items-center justify-center p-4 text-center sm:items-center sm:p-0">
+      <DialogPanel
+        transition
+        className="relative w-full max-w-md h-auto transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:w-full sm:max-w-lg sm:my-8"
+      >
+        <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+          <div className="flex flex-col">
+            <div className="flex justify-between w-full sm:w-11/12 ml-0 sm:ml-5 p-1">
+              <div className="relative flex  w-full items-center justify-center">
+                <img
+                   src={`images/${confirme ? "drink" : "confirmecheck"}.svg`}
+                  className="ml-5 "
+                />
+              </div>
+              <div
+                className="self-center cursor-pointer"
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <img
+                  src="images/cross.svg"
+                  className="w-6 h-6"
+                />
+              </div>
+            </div>
+
+            <div className="w-full mt-8 flex flex-col justify-center items-center gap-3 ">
+              <p className="font-bold text-xl sm:text-3xl font-sans text-center">
+              {confirme
+                        ? "Confirm Order"
+                        : "Order Confirmed!"}
+              </p>
+              <p className="text-center text-sm  text-gray-500">
+              {confirme
+                        ? "Are you ready to place your order? Your selected items will be submitted."
+                        : "Your order has been placed. Enjoy your meal! "}
+              
+              
+              </p>
+
+              <div className="flex flex-row gap-2 mt-4 mb-4 w-full ">
+                {
+                  confirme && 
+                  <button
+                  className=" bg-transparent border-2 h-12 border-red-500 text-red-500  text-lg w-11/12  self-center font-semibold py-2 rounded-lg"
+                  onClick={() => {
+                    navigate("/cart");
+                  }}
+                >
+                  Cancel
+                </button>
+                }
+               
+                <button
+                  className=" bg-red-500   h-12 text-white  w-full sm:w-6/12 text-lg font-semibold py-2 rounded-lg"
+                  onClick={
+                    confirme
+                      ? () => {
+                          navigate("/cart");
+                          setConfirme(false);
+                          console.log("co");
+                        }
+                      : () => {
+                          navigate("/cart");
+                          setConfirme(false);
+                          setProccesShow(false);
+                          setOpen(false);
+                          setProductshop([]);
+                        }
+                  }
+                >
+                  Confirme
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </DialogPanel>
+    </div>
+  </div>
+</Dialog>
     </div>
   );
 };
