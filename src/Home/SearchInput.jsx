@@ -46,6 +46,7 @@ const SearchInput = () => {
   };
 
   const isHomePage = location.pathname === "/hompage";
+  const isSearchPage = location.pathname === "/search";
   return (
     <>
       <div
@@ -53,16 +54,18 @@ const SearchInput = () => {
           isHomePage && "w-11/12"
         }`}
       >
-        {!isHomePage && (
-          <div
-            className="w-[55px] h-12 border rounded-xl flex justify-center items-center border-black"
-            onClick={() => navigate(-1)}
-          >
-            <MdOutlineKeyboardArrowLeft className="text-3xl" />
-          </div>
-        )}
+{(!isHomePage || searchTerm || isSearchPage) && (
+  <div
+    className="w-12 h-12 border  rounded-xl flex justify-center items-center border-black"
+    style={{ minWidth: '3rem', minHeight: '3rem' }} 
+    onClick={() => navigate(-1)}
+  >
+    <MdOutlineKeyboardArrowLeft className="text-3xl" />
+  </div>
+)}
 
-        <div className="relative w-full flex items-center bg-gray-100 rounded-xl px-4 py-2 shadow-sm">
+
+        <div className={`relative  flex items-center bg-gray-100 rounded-xl px-4 py-2 shadow-sm ${isHomePage ? 'w-full':'w-10/12'}`}>
           <img src={searchLogo} alt="Search" className="w-5 h-5 mr-3" />
           <input
             type="text"
@@ -125,10 +128,10 @@ const SearchInput = () => {
                   <div className=" rounded-full">
                     <img
                       src="images/productimage.svg"
-                      className="w-36 h-24 rounded-3xl"
+                      className="rounded-3xl"
                     />
                   </div>
-                  <section className="flex flex-col gap-1 text-right w-11/12">
+                  <section className="flex flex-col mt-1 text-right w-11/12">
                     <div className="flex text-right justify-between w-11/12 ml-4">
                       <div className="p-1">
                         <p className="font-bold sm:text-base text font-roboto text-base">

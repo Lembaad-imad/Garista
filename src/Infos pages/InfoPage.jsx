@@ -21,6 +21,7 @@ const InfoPage = () => {
   const [total, setTotal] = useState(product.price);
   const [open, setOpen] = useState(false);
   const { setProductshop, productshop } = useStore();
+  const [comment, setComment] = useState("");
   const noScrollbar = {
     msOverflowStyle: "none",
     scrollbarWidth: "none",
@@ -61,6 +62,7 @@ const InfoPage = () => {
       extras,
       count,
       total: parseFloat(total),
+      comment,
     };
     setProductshop([...productshop, productToAdd]);
     setOpen(true);
@@ -69,6 +71,12 @@ const InfoPage = () => {
   return (
     <div className="h-[400px]">
       <div>
+      <div
+        className="fixed top-4  bg-transparent left-4 w-12 h-12 border rounded-xl flex justify-center items-center border-white z-50"
+        onClick={() => navigate(-1)}
+      >
+        <MdOutlineKeyboardArrowLeft className="text-3xl text-white" />
+      </div>
         <div className="">
           <img src="/images/imageinfo.svg" alt="" className="w-full " />
         </div>
@@ -100,7 +108,7 @@ const InfoPage = () => {
 
       <div className="rounded-s-3xl  bg-transparent relative bottom-28">
         <div className="w-11/12 p-2 ml-4  flex justify-between">
-          <p className="font-sans text-xl font-bold mt-4">{product.name}</p>
+          <p className="font-sans text-3xl font-bold mt-4">{product.name}</p>
         </div>
         <div className="w-11/12 p-2 ml-4 mt-4 flex justify-between items-center">
           <p className="text-2xl font-sans text-red-600 font-bold">
@@ -194,7 +202,7 @@ const InfoPage = () => {
                       extras.includes(option) ? " " : "bg-[#F86A2E]"
                     }`}
                     onClick={() => handleExtraToggle(option)}
-                    // disabled={extras.includes(option)}
+                  
                   >
                     {}
                     <img
@@ -212,8 +220,10 @@ const InfoPage = () => {
             <p className="text-xl font-sans text-black font-bold">Note</p>
             <textarea
               name="comment"
-              className="w-full border-2 p-1 h-20 mt-3 rounded-lg border-gray-500 text-gray-600"
-              placeholder="Add any special requests or notes here..."
+              value={comment} // Bind value to comment state
+              onChange={(e) => setComment(e.target.value)} // Update state on change
+              className="border p-2 rounded-md w-full mt-2"
+              placeholder="Add a note..."
             />
           </div>
         </div>
@@ -255,8 +265,8 @@ const InfoPage = () => {
                       }}
                     >
                       <img
-                        src="images/cross.svg"
-                        className="w-6 h-6 sm:w-8 sm:h-8"
+                        src="images/exist.svg"
+                        className="w-6 h-6 relative bottom-14"
                       />
                     </div>
                   </div>

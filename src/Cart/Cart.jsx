@@ -76,6 +76,9 @@ const Cart = () => {
   const handleShowDetails = (index) => {
     setShowDetailsIndex(showDetailsIndex === index ? null : index);
   };
+  const hnadleClearCard = ()=>{
+    setProductshop([])
+  }
   return (
     <div>
       <div className="flex flex-col justify-center  mt-5 w-11/12 ml-5 p-1">
@@ -90,6 +93,7 @@ const Cart = () => {
             className={`font-semibold text-lg text-btncollor underline underline-offset-4 ${
               productshop.length === 0 ? "opacity-50" : ""
             }`}
+            onClick={hnadleClearCard}
           >
             Clear Card
           </p>
@@ -106,7 +110,7 @@ const Cart = () => {
             <img
               src="images/Group.svg"
               alt="Cart is empty"
-              className="mx-auto w-36 "
+              className="mx-auto w-80 "
             />
             <p className="text-xl font-sans font-bold mt-4">
               Your Cart is Empty
@@ -123,99 +127,119 @@ const Cart = () => {
           </div>
         ) : (
           <ul>
-            {productshop.map((item, index) => (
-              <li key={index} onClick={() => HandleCliclProduct(index)}>
-                <div className="flex flex-col gap-2">
-                  <div className="flex justify-between mb-1 mt-5 hover:bg-gray-100">
-                    <div>
-                      <img
-                        src={item.image}
-                        className="items-center self-center justify-center rounded-2xl mt-2 w-40"
-                        alt={item.name}
-                      />
-                    </div>
-                    <section className="flex flex-col gap-2 text-right w-11/12">
-                      <div className="flex text-right justify-between w-11/12 ml-4">
-                        <div className="p-1 flex justify-between w-full">
-                          <p className="font-normal font-roboto text-xl">
-                            {item.name}
-                          </p>
-                          <div
-                            className="self-center"
-                            onClick={(e) => {
-                              handleRemoveProduct(item.name);
-                              e.stopPropagation();
-                            }}
-                          >
-                            <img
-                              src="images/cross.svg"
-                              className="text-left font-bold text-red-600 text-2xl"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex justify-between ml-5">
-                        <p className="text-red-600 font-sans text-lg font-semibold">
-                          {item.price.toFixed(2) * item.quantity} MAD
-                        </p>
-                        <div className="flex items-center bg-[#FFF1E5] rounded-full w-24 border-2 border-red-200 p-1">
-                          <button
-                            className="bg-red-500 rounded-full flex justify-center items-center w-6 h-6 text-white"
-                            onClick={(e) => {
-                              handleDecrement(index);
-                              e.stopPropagation();
-                            }}
-                          >
-                            <img src="/images/Line.svg" alt="minus" />
-                          </button>
-                          <p className="text-black text-xl font-semibold mx-4">
-                            {" "}
-                            {item.quantity || 1}
-                          </p>
-                          <button
-                            className="bg-red-500 rounded-full flex justify-center items-center w-6 h-6 text-white"
-                            onClick={(e) => {
-                              handleIncrement(index);
-                              e.stopPropagation();
-                            }}
-                          >
-                            <img src="/images/plus.svg" alt="plus" />
-                          </button>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                  {activeProductIndex === index && (
-        <div className="flex flex-col items-start gap-2 text-right w-11/12 transition-all duration-300 ease-out transform">
-          <div className="flex justify-between w-full cursor-pointer" 
-           onClick={(e) => {handleShowDetails(index);e.stopPropagation()}} 
-          >
-            <p>Order Details</p>
-            <svg
-              className="w-6 h-6 transition-transform duration-300 ease-out"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              style={{ transform: showDetailsIndex === index ? 'rotate(180deg)' : 'rotate(0deg)' }}
-             
-            >
-              <path d="M5.292 7.293a1 1 0 011.415 0L10 10.585l3.293-3.292a1 1 0 111.414 1.415l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.415z" />
-            </svg>
-          </div>
-
-          {/* Show additional details when "Show Details" is clicked */}
-          {showDetailsIndex === index && (
-            <div className="mt-2 text-left">
-              <p><strong className="text-gray-700">Sauce : </strong > <span  className="text-gray-400">Algerienne</span></p>
-              <p><strong className="text-gray-700">Ingredients : </strong> <span  className="text-gray-400">Onion - tomate</span></p>
-              <p><strong className="text-gray-700">Comment : </strong><span  className="text-gray-400">Salam 3afak mataboch bzf o bghit maticha khedra</span></p>
-            </div>
-          )}
+          {productshop.map((item, index) => (
+  <li key={index} onClick={() => HandleCliclProduct(index)}>
+    <div className="flex flex-col gap-2">
+      <div className="flex justify-between mb-1 mt-5 hover:bg-gray-100">
+        <div>
+          <img
+            src={item.image}
+            className="items-center self-center justify-center rounded-2xl mt-2 w-40"
+            alt={item.name}
+          />
         </div>
-      )}
-                </div>
-              </li>
-            ))}
+        <section className="flex flex-col gap-2 text-right w-11/12">
+          <div className="flex text-right justify-between w-11/12 ml-4">
+            <div className="p-1 flex justify-between w-full">
+              <p className="font-normal font-roboto text-xl">
+                {item.name}
+              </p>
+              <div
+                className="self-center"
+                onClick={(e) => {
+                  handleRemoveProduct(item.name);
+                  e.stopPropagation();
+                }}
+              >
+                <img
+                  src="images/cross.svg"
+                  className="text-left font-bold text-red-600 text-2xl"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-between ml-5">
+            <p className="text-red-600 font-sans text-lg font-semibold">
+              {item.price.toFixed(2) * item.quantity} MAD
+            </p>
+            <div className="flex items-center bg-[#FFF1E5] rounded-full w-24 border-2 border-red-200 p-1">
+              <button
+                className="bg-red-500 rounded-full flex justify-center items-center w-6 h-6 text-white"
+                onClick={(e) => {
+                  handleDecrement(index);
+                  e.stopPropagation();
+                }}
+              >
+                <img src="/images/Line.svg" alt="minus" />
+              </button>
+              <p className="text-black text-xl font-semibold mx-4">
+                {item.quantity || 1}
+              </p>
+              <button
+                className="bg-red-500 rounded-full flex justify-center items-center w-6 h-6 text-white"
+                onClick={(e) => {
+                  handleIncrement(index);
+                  e.stopPropagation();
+                }}
+              >
+                <img src="/images/plus.svg" alt="plus" />
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+      {(item.comment || item.extras.length !== 0) && (
+  <div className="flex flex-col items-start gap-2 text-right w-11/12 transition-all duration-300 ease-out transform">
+    <div
+      className="flex justify-between w-full cursor-pointer"
+      onClick={(e) => {
+        handleShowDetails(index);
+        e.stopPropagation();
+      }}
+    >
+      <p>Order Details</p>
+      <svg
+        className="w-6 h-6 transition-transform duration-300 ease-out"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        style={{
+          transform: showDetailsIndex === index ? "rotate(180deg)" : "rotate(0deg)",
+        }}
+      >
+        <path d="M5.292 7.293a1 1 0 011.415 0L10 10.585l3.293-3.292a1 1 0 111.414 1.415l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.415z" />
+      </svg>
+    </div>
+
+    {showDetailsIndex === index && (
+      <div className="mt-2 text-left">
+        
+          <p>
+            <strong className="text-gray-700">Sauce : </strong>
+            <span className="text-gray-400">Sauce</span>
+          </p>
+       
+        
+          <p>
+            <strong className="text-gray-700">Ingredients : </strong>
+            <span className="text-gray-400">{item.extras.join(',')}</span>
+          </p>
+       
+        
+          <p>
+            <strong className="text-gray-700">Comment : </strong>
+            <span className="text-gray-400">{item.comment}</span>
+          </p>
+        
+      </div>
+    )}
+  </div>
+)}
+
+    </div>
+  </li>
+))}
+
           </ul>
         )}
       </div>
@@ -348,10 +372,10 @@ const Cart = () => {
                   setOpen(false);
                 }}
               >
-                <img
-                  src="images/cross.svg"
-                  className="w-6 h-6"
-                />
+                              <img
+                        src="images/exist.svg"
+                        className="w-6 h-6 relative bottom-14"
+                      />
               </div>
             </div>
 
@@ -361,7 +385,7 @@ const Cart = () => {
                         ? "Confirm Order"
                         : "Order Confirmed!"}
               </p>
-              <p className="text-center text-sm  text-gray-500">
+              <p className="text-center text-sm w-80 text-gray-500">
               {confirme
                         ? "Are you ready to place your order? Your selected items will be submitted."
                         : "Your order has been placed. Enjoy your meal! "}
@@ -383,7 +407,7 @@ const Cart = () => {
                 }
                
                 <button
-                  className=" bg-red-500   h-12 text-white  w-full sm:w-6/12 text-lg font-semibold py-2 rounded-lg"
+                  className=" bg-red-500   h-12 text-white  w-full  text-lg font-semibold py-2 rounded-lg"
                   onClick={
                     confirme
                       ? () => {

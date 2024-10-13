@@ -47,25 +47,7 @@ const Filter = () => {
                 <p className='text-xl font-bold font-roboto text-gray-700'>Price</p>
                 <PriceSlider />
             </div>
-            {/* <div className="border-b-[1px] border-gray-400 w-10/12 mx-auto mt-4"></div> */}
-            {/* <div className='mt-8 w-11/12 ml-5 p-1'>
-                <p className='text-xl font-bold font-roboto text-gray-700'>Sort by</p>
-                <div className="flex flex-col space-y-2 mt-5">
-                    {[, "★★★★+", "★★★+", "★★+", "★+"].map((option, index) => (
-                        <label key={index} className="flex items-center space-x-2 cursor-pointer">
-                            <input
-                                type="radio"
-                                name="sort"
-                                value={option}
-                                checked={selectedOption === option}
-                                onChange={handleOptionChange}
-                                className="form-radio text-black h-6 w-6"
-                            />
-                            <span className="text-gray-800 font-roboto text-lg">{option}</span>
-                        </label>
-                    ))}
-                </div>
-            </div> */}
+         
             <div className='fixed bottom-10 w-11/12 ml-5 p-1'>
                 <div className="flex gap-2 justify-between">
                     <button
