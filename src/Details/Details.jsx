@@ -69,7 +69,6 @@ const Details = () => {
               alt="Facebook"
               className="w-9 h-9"
             />
-            <p className="text-sm font-bold">Facebook</p>
             </div>
             <div className="flex flex-col items-center">
             <img
@@ -77,7 +76,6 @@ const Details = () => {
               alt="Instagram"
              className="w-9 h-9"
             />
-            <p className="text-sm font-bold">Instagram</p>
             </div>
             <div className="flex flex-col items-center">
             <img
@@ -85,7 +83,6 @@ const Details = () => {
               alt="Tiktok"
               className="w-9 h-9"
             />
-            <p className="text-sm font-bold">Tiktok</p>
             </div>
             <div className="flex flex-col items-center">
             <img
@@ -93,7 +90,6 @@ const Details = () => {
               alt="Snapchat"
               className="w-9 h-9"
             />
-            <p className="text-sm font-bold">Snapchat</p>
             </div>
             <div className="flex flex-col items-center">
             <img
@@ -101,7 +97,6 @@ const Details = () => {
               alt="Youtube"
                className="w-9 h-9"
             />
-            <p className="text-sm font-bold">Youtube</p>
             </div>
            
           </div>
