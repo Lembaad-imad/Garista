@@ -141,7 +141,7 @@ const Cart = () => {
         <section className="flex flex-col gap-2 text-right w-11/12">
           <div className="flex text-right justify-between w-11/12 ml-4">
             <div className="p-1 flex justify-between w-full">
-              <p className="font-normal font-roboto text-xl">
+              <p className="font-normal font-roboto text-left text-xl">
                 {item.name}
               </p>
               <div
