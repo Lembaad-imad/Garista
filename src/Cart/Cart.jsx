@@ -110,7 +110,7 @@ const Cart = () => {
             <img
               src="images/Group.svg"
               alt="Cart is empty"
-              className="mx-auto w-80 "
+              className="mx-auto w-44 "
             />
             <p className="text-xl font-sans font-bold mt-4">
               Your Cart is Empty
@@ -141,9 +141,9 @@ const Cart = () => {
         <section className="flex flex-col gap-2 text-right w-11/12">
           <div className="flex text-right justify-between w-11/12 ml-4">
             <div className="p-1 flex justify-between w-full">
-              <p className="font-normal font-roboto text-left text-xl">
-                {item.name}
-              </p>
+            <p className="font-normal font-roboto text-left w-40 text-lg truncate overflow-hidden whitespace-nowrap">
+    {item.name}
+</p>
               <div
                 className="self-center"
                 onClick={(e) => {
@@ -159,7 +159,7 @@ const Cart = () => {
             </div>
           </div>
           <div className="flex justify-between ml-5">
-            <p className="text-red-600 font-sans text-lg font-semibold">
+            <p className="text-red-600 font-sans text-base font-semibold">
               {item.price.toFixed(2) * item.quantity} MAD
             </p>
             <div className="flex items-center bg-[#FFF1E5] rounded-full w-24 border-2 border-red-200 p-1">
@@ -252,8 +252,8 @@ const Cart = () => {
           </p>
         </div>
         <button
-          className={`w-11/12 h-16 text-white text-xl mb-7 rounded-xl self-center ${
-            productshop.length === 0 ? "bg-red-200" : "bg-red-600"
+          className={`w-11/12 h-16  text-white text-xl mb-7 rounded-xl self-center ${
+            productshop.length === 0 ? "bg-red-200 " : "bg-red-600"
           }`}
           onClick={() => {
             setOpen(true);

@@ -52,7 +52,7 @@ const HistoryDialog = ({ setOpen, open }) => {
               <div className="w-11/12 mt-8 flex flex-col justify-center gap-3 ml-4">
                   <div>
                     <p className="text-2xl font-bold font-sans">
-                      Rate Your Experience
+                      Rate Your Experience 
                     </p>
                   </div>
                   <div className='flex flex-col gap-2'>

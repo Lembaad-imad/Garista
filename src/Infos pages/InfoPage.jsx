@@ -233,7 +233,7 @@ const InfoPage = () => {
             <p className="text-xl font-sans text-black font-bold">${total}</p>
           </div>
           <button
-            className="w-11/12 h-16 text-white  text-xl mb-7 rounded-xl bg-red-600 self-center"
+            className="w-11/12 h-14 text-white  text-xl mb-7 rounded-xl bg-red-600 self-center"
             onClick={handleAddToCart}
           >
             Add to Cart

@@ -67,35 +67,35 @@ const Details = () => {
             <img
               src="images/fb.svg"
               alt="Facebook"
-              className="w-9 h-9"
+              className="w-14 h-14"
             />
             </div>
             <div className="flex flex-col items-center">
             <img
               src="images/insta.svg"
               alt="Instagram"
-             className="w-9 h-9"
+             className="w-14 h-14"
             />
             </div>
             <div className="flex flex-col items-center">
             <img
               src="images/tiktok.svg"
               alt="Tiktok"
-              className="w-9 h-9"
+              className="w-14 h-14"
             />
             </div>
             <div className="flex flex-col items-center">
             <img
               src="images/snap.svg"
               alt="Snapchat"
-              className="w-9 h-9"
+              className="w-14 h-14"
             />
             </div>
             <div className="flex flex-col items-center">
             <img
               src="images/youtube.svg"
               alt="Youtube"
-               className="w-9 h-9"
+               className="w-14 h-14"
             />
             </div>
            

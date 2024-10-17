@@ -5,33 +5,97 @@
 display: flex;
 justify-content: center;
 align-items: center;
+background-image: url(images/navbar-custom.png);
+background-size: cover;
+background-color: transparent;
 }
 
 .bill
 {
-position: relative;
-width: 65px;
+/* position: relative; */
+/* width: 120px;
 height: 64px;
-background: #ff4886;
-border: 7px solid white;
-border-radius: 50%;
+background: #ff4886; */
+
+/* border-radius: 50%;
 cursor: pointer;
 display: flex;
 justify-content: center;
 align-items: center;
-z-index: 10;
-transform: translateY(-40px);
+z-index: 1000;
+transform: translateY(-40px); */
+}
+.navbar{
+    position: absolute;
+    bottom: -25px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    height: 200px;
+}
+.nav-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(90deg);
+}
+.nav-cont .bill,
+.nav-cont span .a
+{
+    height: 60px;
+    width: 60px;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.nav-cont span{
+    position: absolute;
+    transition: all 0.4s ease;
+    opacity: 0;
+    /* transform: rotate(calc(var(--i) * (360deg / 8))) translateY(120px); */
+}
+.nav-cont span .a{
+    /* transform: rotate(80deg); */
+    transform: rotate(calc(var(--i) * (360deg / 8)))
+}
+.nav-cont span .a dev{
+  
+    transform: rotate(calc(var(--i) * (360deg / 8)))
+}
+.open .nav-cont span{
+    transform: rotate(calc(var(--i) * (360deg / 8))) translateY(95px);
+    opacity: 1;
+}
+.open .nav-cont span[style*="--i: 2"] .a {
+     transform: rotate(180deg);
+    position: relative;
+    top: 15px;
+}
+.open .nav-cont span[style*="--i: 1"] .a {
+    transform: rotate(270deg);
+   
 }
 
-.menu
+.nav-cont .bill{
+    z-index: 100;
+    transform: rotate(-90deg);
+    transition: all 0.4s ease;
+}
+.open .bill{
+    transform: rotate(0deg);
+}
+/* .menu
+
 {
 position: absolute;
 
-/* height: 60px; */
 background :#fff8eb;
 
-}
-.bill i {
+} */
+/* .bill i {
     position: absolute;
     inset: 0;
 }
@@ -46,9 +110,9 @@ background :#fff8eb;
     border-top-right-radius: 20px;
     box-shadow: 4.5px -5.5px white;
     z-index: -100;
-}
+} */
 
-.bill i::after {
+/* .bill i::after {
     content: '';
     position: absolute;
     width: 20px;
@@ -58,4 +122,6 @@ background :#fff8eb;
     background-color: #fff8eb;
     border-top-left-radius: 20px;
     box-shadow: -4.5px -5.5px white;
-}
+} */
+
+
