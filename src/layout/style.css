@@ -5,26 +5,12 @@
 display: flex;
 justify-content: center;
 align-items: center;
-background-image: url(images/navbar-custom.png);
+/* background-image: url(images/navbar-custom.png); */
 background-size: cover;
 background-color: transparent;
 }
 
-.bill
-{
-/* position: relative; */
-/* width: 120px;
-height: 64px;
-background: #ff4886; */
 
-/* border-radius: 50%;
-cursor: pointer;
-display: flex;
-justify-content: center;
-align-items: center;
-z-index: 1000;
-transform: translateY(-40px); */
-}
 .navbar{
     position: absolute;
     bottom: -25px;

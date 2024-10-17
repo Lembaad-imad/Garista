@@ -64,7 +64,7 @@ const BottomNav = () => {
       )} */}
 
       <div
-        className={`fixed navigation z-100  bottom-0 h-16 left-0 right-0 p-4 `}
+        className={`fixed navigation z-100  bottom-0 h-16 left-0 right-0 p-4 bg-[url('/images/navbar-custom.png')] `}
       >
      <nav className={`navbar ${navButtons ? "open" : ""}`}>
   <div className="nav-cont">
