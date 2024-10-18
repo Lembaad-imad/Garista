@@ -61,7 +61,7 @@ background-color: transparent;
     top: 15px;
 }
 .open .nav-cont span[style*="--i: 1"] .a {
-    transform: rotate(270deg);
+    transform: rotate(230deg);
    
 }
 

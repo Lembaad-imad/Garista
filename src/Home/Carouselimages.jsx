@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
 const Carouselimages = () => {
@@ -8,6 +8,16 @@ const Carouselimages = () => {
         "/images/P2.svg",
         "/images/P3.svg",
     ];
+
+    // Automatic slide change every 3 seconds
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+        }, 3000); // Change slide every 3 seconds
+
+        // Cleanup interval on component unmount
+        return () => clearInterval(intervalId);
+    }, [slides.length]);
 
     const handleSwipeLeft = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
@@ -29,7 +39,7 @@ const Carouselimages = () => {
     };
 
     return (
-        <div id="default-carousel" className="flex flex-col w-11/12 items-center gap-1">
+        <div id="default-carousel" className="flex flex-col w-11/12 items-center ">
             <div
                 {...handlers}
                 className="relative w-full h-48 rounded-xl bg-red-400 overflow-hidden"

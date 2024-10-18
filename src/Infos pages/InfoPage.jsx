@@ -134,8 +134,8 @@ const InfoPage = () => {
           <p className="text-lg font-sans text-black">{product.des}</p>
         </div>
         <div
-          className="overflow-y-scroll w-11/12 p-2 h-[250px] ml-4 mt-4"
-          style={noScrollbar}
+          className=" w-11/12 p-2  ml-4 "
+          
         >
           <div>
             <p className="text-xl font-bold">Select size for your burger</p>
@@ -233,7 +233,7 @@ const InfoPage = () => {
             <p className="text-xl font-sans text-black font-bold">${total}</p>
           </div>
           <button
-            className="w-11/12 h-14 text-white  text-xl mb-7 rounded-xl bg-red-600 self-center"
+            className="w-11/12 h-12 text-white  text-lg mb-7 rounded-xl bg-red-600 self-center"
             onClick={handleAddToCart}
           >
             Add to Cart
@@ -243,7 +243,7 @@ const InfoPage = () => {
       <Dialog open={open} onClose={setOpen} className="relative z-10">
         <DialogBackdrop
           transition
-          className="fixed inset-0 bg-black bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
+          className="fixed inset-0 bg-black bg-opacity-40 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
         />
 
         <div className="fixed inset-0 z-10 w-screen flex items-center justify-center overflow-y-auto">
@@ -266,7 +266,7 @@ const InfoPage = () => {
                     >
                       <img
                         src="images/exist.svg"
-                        className="w-6 h-6 relative bottom-14"
+                        className="w-4 h-4 relative bottom-14"
                       />
                     </div>
                   </div>

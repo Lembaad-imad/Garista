@@ -64,7 +64,7 @@ const BottomNav = () => {
       )} */}
 
       <div
-        className={`fixed navigation z-100  bottom-0 h-16 left-0 right-0 p-4 bg-[url('/images/navbar-custom.png')] `}
+        className={`fixed navigation   bottom-0 h-16 left-0 right-0 p-4 bg-[url('/images/navbar-custom.png')] `}
       >
      <nav className={`navbar ${navButtons ? "open" : ""}`}>
   <div className="nav-cont">
@@ -94,17 +94,9 @@ const BottomNav = () => {
       </div>
     </span>
 
-    <span style={{ "--i": 2 }}>
-      <div className="a">
-        <img
-          src="images/history.svg"
-          alt="History"
-          onClick={() => setOpenHistoryDialog(true)}
-        />
-      </div>
-    </span>
 
-    <span style={{ "--i": 3 }}>
+
+    <span style={{ "--i": 2 }}>
       <div className="a">
         <img
           src="images/message.svg"
@@ -113,12 +105,21 @@ const BottomNav = () => {
         />
       </div>
     </span>
+    <span style={{ "--i": 3 }}>
+      <div className="a">
+        <img
+          src="images/history.svg"
+          alt="History"
+          onClick={() => setOpenHistoryDialog(true)}
+        />
+      </div>
+    </span>
   </div>
 </nav>
 
         <div className="fixed bottom-3 z-10 left-0 right-0 flex justify-around items-center">
           <div
-            className="flex flex-col items-center"
+            className="flex flex-col gap-1 items-center"
             onClick={() => navigate("/hompage")}
           >
             <img
@@ -137,13 +138,13 @@ const BottomNav = () => {
             </span>
           </div>
           <div
-            className="flex flex-col mr-8"
+            className="flex flex-col gap-1 mr-9"
             onClick={() => navigate("/search")}
           >
             <img
               src={`images/${activeIcon === "search" ? "searchacv" : "s2"}.svg`}
               alt="Search"
-              className={`w-6  h-6 ${
+              className={`w-6 ml-2 h-6 ${
                 activeIcon === "search" ? "text-red-500" : "text-gray-400"
               }`}
             />
@@ -156,7 +157,7 @@ const BottomNav = () => {
             </span>
           </div>
           <div
-            className="flex flex-col items-center"
+            className="flex flex-col gap-1 items-center"
             onClick={() => navigate("/cart")}
           >
             <img
@@ -177,7 +178,7 @@ const BottomNav = () => {
             </span>
           </div>
           <div
-            className="flex flex-col items-center"
+            className="flex flex-col gap-1 items-center"
             onClick={() => navigate("/details")}
           >
             <img

@@ -9,7 +9,7 @@ import Carouselimages from './Carouselimages'
 
 const HomePage = () => {
   return (
-    <div className='bg-bgcolor  p-1 flex flex-col gap-3 justify-center'>
+    <div className='bg-bgcolor  p-1 flex flex-col gap-2 justify-center'>
         <div className='flex justify-around gap-20 w-full  items-center border-b-2 border-gray-200 '>
             <img src='/images/logo.svg' alt='logo' className='ml-2' />
             <div>
@@ -22,8 +22,8 @@ const HomePage = () => {
         </div>
         {/* <div className=' bg bg-black w-screen h-52  flex justify-center items-center'>
         </div> */}
-        <div className='w-11/12 mx-auto flex flex-col gap-4 '>
-          <p className='font-sans font-bold text-2xl '>Categories</p>
+        <div className='w-11/12  mx-auto flex flex-col  '>
+          <p className='font-sans font-bold text-2xl  '>Categories</p>
           <div>
             <Categories />
           </div>

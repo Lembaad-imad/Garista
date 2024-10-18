@@ -102,7 +102,7 @@ const Cart = () => {
       <BottomNav />
  
       <div
-  className="overflow-y-scrollbg-red-300  max-h-[calc(110vh-430px)]  w-11/12 p-1 ml-4 mt-6"
+  className="overflow-y-scrollbg-red-300  max-h-[calc(110vh-390px)]  w-11/12 p-1 ml-4 "
   style={noScrollbar}
 >
         {productshop.length === 0 ? (
@@ -243,7 +243,7 @@ const Cart = () => {
           </ul>
         )}
       </div>
-        <div className="border-b-[1px] fixed bottom-52 border-gray-400 w-full mx-auto "></div>
+        <div className="border-b-[1px] fixed  border-gray-400 w-full mx-auto "></div>
       <div className="flex flex-col w-full  fixed bottom-16">
         <div className="w-11/12 p-2 ml-4 mt-4 flex justify-between items-center">
           <p className="text-xl font-sans font-bold text-black">Total</p>
@@ -252,7 +252,7 @@ const Cart = () => {
           </p>
         </div>
         <button
-          className={`w-11/12 h-16  text-white text-xl mb-7 rounded-xl self-center ${
+          className={`w-11/12 h-12   text-white text-xl mb-12 rounded-xl self-center ${
             productshop.length === 0 ? "bg-red-200 " : "bg-red-600"
           }`}
           onClick={() => {
@@ -348,7 +348,7 @@ const Cart = () => {
           <Dialog open={open} onClose={setOpen} className="relative z-10">
   <DialogBackdrop
     transition
-    className="fixed inset-0 bg-black bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
+    className="fixed inset-0 bg-black bg-opacity-40 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
   />
 
   <div className="fixed inset-0 z-10 w-screen flex items-center justify-center overflow-y-auto">
@@ -374,7 +374,7 @@ const Cart = () => {
               >
                               <img
                         src="images/exist.svg"
-                        className="w-6 h-6 relative bottom-14"
+                        className="w-4 h-4 relative bottom-16"
                       />
               </div>
             </div>

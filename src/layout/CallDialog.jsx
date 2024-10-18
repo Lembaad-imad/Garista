@@ -6,10 +6,10 @@ const CallDialog = ({ setOpen, open }) => {
     <Dialog open={open} onClose={setOpen} className="relative z-10">
     <DialogBackdrop
       transition
-      className="fixed  inset-0 bg-black bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
+      className="fixed  inset-0 bg-black bg-opacity-40 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
     />
 
-    <div className="fixed  inset-0 z-10 w-screen flex items-center justify-center overflow-y-auto">
+    <div className="fixed -bottom-28 inset-0 z-100 w-screen flex items-center justify-center overflow-y-auto">
       <div className="flex min-h-screen items-center justify-center p-4 text-center sm:items-center sm:p-0">
         <DialogPanel
           transition
@@ -29,7 +29,7 @@ const CallDialog = ({ setOpen, open }) => {
                 >
                   <img
                     src="images/exist.svg"
-                    className="w-6 h-6 relative bottom-14"
+                    className="w-4 h-4 relative bottom-20"
                   />
                 </div>
               </div>

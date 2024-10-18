@@ -6,14 +6,14 @@ const MessageDialog = ({ setOpen, open }) => {
     <Dialog open={open} onClose={setOpen} className="relative z-10">
     <DialogBackdrop
       transition
-      className="fixed  inset-0 bg-black bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
+      className="fixed  inset-0 bg-black bg-opacity-40 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
     />
 
     <div className="fixed  inset-0 z-10 w-screen flex items-center justify-center overflow-y-auto">
       <div className="flex min-h-screen items-center justify-center p-4 text-center sm:items-center sm:p-0">
         <DialogPanel
           transition
-          className="relative  bottom-28 w-full max-w-md h-auto transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:w-full sm:max-w-lg sm:my-8"
+          className="relative  bottom-12 w-full max-w-md h-auto transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:w-full sm:max-w-lg sm:my-8"
         >
           <div className="bg-white  px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
             <div className="flex flex-col">
@@ -29,7 +29,7 @@ const MessageDialog = ({ setOpen, open }) => {
                 >
                   <img
                     src="images/exist.svg"
-                    className="w-6 h-6 relative bottom-14"
+                    className="w-4 h-4 relative bottom-20"
                   />
                 </div>
               </div>
