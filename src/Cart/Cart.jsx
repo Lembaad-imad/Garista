@@ -243,7 +243,7 @@ const Cart = () => {
           </ul>
         )}
       </div>
-        <div className="border-b-[1px] fixed  border-gray-400 w-full mx-auto "></div>
+        <div className="border-b-[1px] fixed bottom-52 border-gray-400 w-full mx-auto "></div>
       <div className="flex flex-col w-full  fixed bottom-16">
         <div className="w-11/12 p-2 ml-4 mt-4 flex justify-between items-center">
           <p className="text-xl font-sans font-bold text-black">Total</p>
