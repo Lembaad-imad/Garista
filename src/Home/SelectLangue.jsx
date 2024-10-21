@@ -7,13 +7,7 @@ import { useEffect } from "react";
 export default function SelectLanguage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { selectedLanguage } = useStore();
-
-  useEffect(() => {
-    if (!selectedLanguage) {
-      navigate("/choselanguage");
-    }
-  }, [selectedLanguage]);
+  const { selectedLanguage, setSelectedLanguage } = useStore();
 
   const languages = [
     {
@@ -33,12 +27,19 @@ export default function SelectLanguage() {
     },
   ];
 
+  // Set default language to English if none is selected
+  useEffect(() => {
+    if (!selectedLanguage) {
+      setSelectedLanguage("English");
+    }
+  }, [selectedLanguage, setSelectedLanguage]);
+
   const selectedLanguageData = languages.find(
     (langue) => langue.name.toLowerCase() === selectedLanguage?.toLowerCase()
   );
 
   if (!selectedLanguageData) {
-    return null; 
+    return null;
   }
 
   return (

@@ -1,0 +1,15 @@
+@keyframes grow-shrink-spin-opacity {
+    0% {
+      transform: rotate(0deg) scale(1.5);
+      opacity: 0.9; 
+    }
+    100% {
+      transform: rotate(1260deg) scale(0.8);
+      opacity: 1; 
+    }
+  }
+  
+  .animate-grow-shrink-spin-opacity {
+    animation: grow-shrink-spin-opacity 1s infinite ease-in-out;
+  }
+  
