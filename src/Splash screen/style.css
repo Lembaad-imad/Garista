@@ -4,12 +4,12 @@
       opacity: 0.9; 
     }
     100% {
-      transform: rotate(1260deg) scale(0.8);
+      transform: rotate(1500deg) scale(0.8);
       opacity: 1; 
     }
   }
   
   .animate-grow-shrink-spin-opacity {
-    animation: grow-shrink-spin-opacity 1s infinite ease-in-out;
+    animation: grow-shrink-spin-opacity 1.5s infinite ease-in-out;
   }
   

@@ -10,17 +10,17 @@ const SplashScreen = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Show content after 900ms (spinner finishes)
+    
     const timer = setTimeout(() => {
       setShowContent(true);
 
-      // Wait 1 second after showing content, then navigate
+      
       const redirectTimer = setTimeout(() => {
         goToLoading();
-      }, 1100); // 1 second delay
+      }, 1800); // 1 second delay
 
-      return () => clearTimeout(redirectTimer); // Cleanup redirect timer
-    }, 900); // Matches the animation duration
+      return () => clearTimeout(redirectTimer); 
+    }, 1200); 
 
     return () => clearTimeout(timer); 
   }, []);
