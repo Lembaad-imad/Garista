@@ -23,13 +23,13 @@ const HomePage = () => {
         {/* <div className=' bg bg-black w-screen h-52  flex justify-center items-center'>
         </div> */}
         <div className='w-11/12  mx-auto flex flex-col  '>
-          <p className='font-sans font-bold text-2xl  '>Categories</p>
+          <p className='font-sans font-bold text-xl  '>Categories</p>
           <div>
             <Categories />
           </div>
         </div>
-        <div className='w-11/12 mx-auto flex flex-col gap-4 '>
-          <p className='font-sans font-bold text-2xl '>Products</p>
+        <div className='w-11/12 mx-auto flex flex-col gap-3 '>
+          <p className='font-sans font-bold text-xl '>Products</p>
           <div>
           <Products />
           </div>

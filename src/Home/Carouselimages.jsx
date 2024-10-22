@@ -4,9 +4,9 @@ import { useSwipeable } from 'react-swipeable';
 const Carouselimages = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const slides = [
-        "/images/P1.svg",
-        "/images/P2.svg",
-        "/images/P3.svg",
+        "/images/R1.svg",
+        "/images/R2.svg",
+        "/images/R3.svg",
     ];
 
     // Automatic slide change every 3 seconds
@@ -40,23 +40,27 @@ const Carouselimages = () => {
 
     return (
         <div id="default-carousel" className="flex flex-col w-11/12 items-center ">
-            <div
-                {...handlers}
-                className="relative w-full h-48 rounded-xl bg-red-400 overflow-hidden"
-            >
-                {slides.map((slide, index) => (
-                    <div
-                        key={index}
-                        className={`absolute inset-0 transition-opacity duration-300 ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
-                    >
-                        <img
-                            src={slide}
-                            alt={`Slide ${index + 1}`}
-                            className="w-screen h-full object-cover rounded-xl"
-                        />
-                    </div>
-                ))}
-            </div>
+<div
+    {...handlers}
+    className="relative w-full h-36 rounded-xl overflow-hidden"
+>
+    {slides.map((slide, index) => (
+        <div
+            key={index}
+            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+        >
+            <img
+                src={slide}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-full object-cover"
+            />
+        </div>
+    ))}
+</div>
+
+
+
+
 
             <div className="space-x-3 mt-3">
                 {slides.map((_, index) => (

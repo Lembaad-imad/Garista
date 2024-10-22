@@ -17,7 +17,7 @@ const SplashScreen = () => {
       
       const redirectTimer = setTimeout(() => {
         goToLoading();
-      }, 3000); // 1 second delay
+      }, 3000); 
 
       return () => clearTimeout(redirectTimer); 
     }, 1200); 

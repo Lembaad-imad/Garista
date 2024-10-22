@@ -72,7 +72,7 @@ const InfoPage = () => {
     <div className="h-[400px]">
       <div>
       <div
-        className="fixed top-4  bg-transparent left-4 w-12 h-12 border rounded-xl flex justify-center items-center border-white z-50"
+        className="absolute top-4  bg-transparent left-4 w-12 h-12 border rounded-xl flex justify-center items-center border-white z-50"
         onClick={() => navigate(-1)}
       >
         <MdOutlineKeyboardArrowLeft className="text-3xl text-white" />
@@ -84,21 +84,27 @@ const InfoPage = () => {
           className="w-12 h-12 border rounded-xl flex justify-center items-center border-black relative bottom-[350px] left-8"
           onClick={() => navigate(-1)}
         >
-          <MdOutlineKeyboardArrowLeft className="text-3xl" />
+          {/* <MdOutlineKeyboardArrowLeft className="text-3xl" /> */}
         </div>
         <div className="flex flex-col items-end w-full   mt-5   relative bottom-28 ">
-          <div className="bg-white p-2 gap-2 rounded-tl-3xl items-center flex ">
+          <div className="bg-white p-3 gap-2 rounded-tl-3xl items-center flex ">
           <div className="flex gap-2">
             <img
               src="/images/Clock.svg"
               alt="clock"
+              className="w-5 h-5 self-center"
+            />
+            <span className="text-black font-medium">{product.time}</span>
+          </div>
+          <div className="flex items-center ">
+            <div className=" self-center">
+          <img
+              src="/images/Star.svg"
+              alt="clock"
               className="w-4 h-4 self-center"
             />
-            <span className="text-black">{product.time}</span>
-          </div>
-          <div>
-            <span className="text-[#F86A2E] text-2xl">★</span>
-            <span className="text-black text-xl ml-1 ">
+            </div>
+            <span className="text-black font-medium text-base ml-1  ">
               {product.rating}
             </span>
           </div>
@@ -108,10 +114,10 @@ const InfoPage = () => {
 
       <div className="rounded-s-3xl  bg-transparent relative bottom-28">
         <div className="w-11/12 p-2 ml-4  flex justify-between">
-          <p className="font-sans text-3xl font-bold mt-4">{product.name}</p>
+          <p className="font-sans text-[26px] font-bold ">{product.name}</p>
         </div>
-        <div className="w-11/12 p-2 ml-4 mt-4 flex justify-between items-center">
-          <p className="text-2xl font-sans text-red-600 font-bold">
+        <div className="w-11/12 p-2 ml-4 h-4 flex justify-between items-center">
+          <p className="text-[22px] font-sans text-red-600 font-semibold">
             {product.price.toFixed(2)} MAD
           </p>
           <div className="flex items-center bg-[#FFF1E5] rounded-full p-2">
@@ -141,7 +147,7 @@ const InfoPage = () => {
             <p className="text-xl font-bold">Select size for your burger</p>
             <p className="text-gray-500 text-lg">Choose a maximum of 7 items</p>
           </div>
-          <div className="mt-5 flex flex-col gap-3">
+          <div className="mt-3 flex flex-col gap-3">
             {[
               `Small ${product.category}`,
               `Medium ${product.category}`,
@@ -184,14 +190,14 @@ const InfoPage = () => {
             <p className="text-xl font-bold">Choose Your Extras</p>
             <p className="text-gray-500 text-">Choose a maximum of 7 items</p>
           </div>
-          <div className="mt-5 flex flex-col gap-3">
+          <div className="mt-1 flex flex-col gap-3">
             {[
               "Extra tomato",
               "Extra Sauce",
               "Extra fromage",
               "Extra onions",
             ].map((option, index) => (
-              <div key={index} className="flex justify-between mt-3 ">
+              <div key={index} className="flex justify-between mt-2 ">
                 <p className="text-xl font-normale">{option}</p>
                 <div className="flex gap-2">
                   <span className="text-[#F86A2E] ml-2 text-base">

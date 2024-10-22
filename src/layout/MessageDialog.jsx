@@ -13,7 +13,7 @@ const MessageDialog = ({ setOpen, open }) => {
       <div className="flex min-h-screen items-center justify-center p-4 text-center sm:items-center sm:p-0">
         <DialogPanel
           transition
-          className="relative  bottom-12 w-full max-w-md h-auto transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:w-full sm:max-w-lg sm:my-8"
+          className="relative  bottom-5 w-full max-w-md h-auto transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:w-full sm:max-w-lg sm:my-8"
         >
           <div className="bg-white  px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
             <div className="flex flex-col">

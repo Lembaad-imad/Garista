@@ -17,7 +17,7 @@ const Categories = () => {
         {categories.map((category, index) => (
           <div
             key={index}
-            className='flex flex-col  items-center justify-center w-24 h-20'
+            className='flex flex-col  items-center justify-center w-24 h-14'
             onClick={() => setCategorieChosen(category)}
           >
             <p

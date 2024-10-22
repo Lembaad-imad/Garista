@@ -11,7 +11,7 @@ import {
 } from "@headlessui/react";
 import ProcessIndicator from "./ProcessIndicator";
 const Cart = () => {
-  const { setProductshop, productshop } = useStore();
+  const { setProductshop, productshop,navButtons } = useStore();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [confirme, setConfirme] = useState(true);
@@ -80,8 +80,12 @@ const Cart = () => {
     setProductshop([])
   }
   return (
-    <div>
-      <div className="flex flex-col justify-center  mt-5 w-11/12 ml-5 p-1">
+    <div className="relative">
+    {/* Overlay when navButtons is true */}
+    {navButtons && (
+      <div className="fixed inset-0 bg-black opacity-30 z-10 pointer-events-none"></div>
+    )}
+      <div className="flex  flex-col justify-center  mt-5 w-11/12 ml-5 p-1">
         <p className="flex-1  text-center text-gray-800  font-sans text-2xl font-bold">
           My Cart
         </p>
@@ -138,7 +142,7 @@ const Cart = () => {
             alt={item.name}
           />
         </div>
-        <section className="flex flex-col gap-2 text-right w-11/12">
+        <section className="flex flex-col  gap-2 text-right w-11/12">
           <div className="flex text-right justify-between w-11/12 ml-4">
             <div className="p-1 flex justify-between w-full">
             <p className="font-normal font-roboto text-left w-40 text-lg truncate overflow-hidden whitespace-nowrap">
@@ -189,7 +193,7 @@ const Cart = () => {
         </section>
       </div>
       {(item.comment || item.extras.length !== 0) && (
-  <div className="flex flex-col items-start gap-2 text-right w-11/12 transition-all duration-300 ease-out transform">
+  <div className="flex flex-col items-start gap-2 text-right w-full transition-all duration-300 ease-out transform">
     <div
       className="flex justify-between w-full cursor-pointer"
       onClick={(e) => {
@@ -243,7 +247,7 @@ const Cart = () => {
           </ul>
         )}
       </div>
-        <div className="border-b-[1px] fixed bottom-52 border-gray-400 w-full mx-auto "></div>
+        <div className="border-b-[1px] z-10 fixed bottom-52 border-gray-400 w-full mx-auto "></div>
       <div className="flex flex-col w-full  fixed bottom-16">
         <div className="w-11/12 p-2 ml-4 mt-4 flex justify-between items-center">
           <p className="text-xl font-sans font-bold text-black">Total</p>
@@ -252,7 +256,7 @@ const Cart = () => {
           </p>
         </div>
         <button
-          className={`w-11/12 h-12   text-white text-xl mb-12 rounded-xl self-center ${
+          className={`w-11/12 h-12 z-10  text-white text-xl mb-12 rounded-xl self-center ${
             productshop.length === 0 ? "bg-red-200 " : "bg-red-600"
           }`}
           onClick={() => {
