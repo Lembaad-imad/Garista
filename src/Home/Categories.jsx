@@ -13,7 +13,7 @@ const Categories = () => {
 
   return (
     <div>
-      <div className='flex justify-around gap-5' style={noScrollbar}>
+      <div className='flex justify-around gap-2' style={noScrollbar}>
         {categories.map((category, index) => (
           <div
             key={index}

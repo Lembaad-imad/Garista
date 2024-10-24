@@ -18,11 +18,11 @@ const Products = () => {
 
   return (
     <div
-      className="h-[500px] overflow-y-scroll grid grid-cols-2 mb-20  gap-4"
+      className="h-[500px] overflow-y-scroll grid grid-cols-2 mb-20 gap-3"
       style={noScrollbar}
     >
       {filteredProducts.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={product.id} product={product}   />
       ))}
     </div>
   );

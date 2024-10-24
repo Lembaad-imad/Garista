@@ -13,7 +13,7 @@ const SearchInput = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [chose, setChosen] = useState(false);
   const { filterClicked } = useStore();
-  const { products } = useStore();
+  const { products,records,setRecords } = useStore();
   const setFilterClickedstore = useStore((state) => state.setFilterClicked);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestions] = useState([
@@ -29,6 +29,7 @@ const SearchInput = () => {
   const handleInputChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
+   
     setShowSuggestions(value.length > 0);
     if (value === "") {
       setChosen(false);
@@ -37,13 +38,18 @@ const SearchInput = () => {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
+      setChosen(true); 
+      setRecords([...records, searchTerm]);
       console.log("Searching for:", searchTerm);
-      navigate(-1);
     }
   };
   const handleClickProduct = (item) => {
+    setRecords( [...records, item.name]);
     navigate("/info ", { state: { product: item } });
   };
+  const filteredProducts = ProductsList.filter((item) =>
+    item.name && item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const isHomePage = location.pathname === "/hompage";
   const isSearchPage = location.pathname === "/search";
@@ -85,7 +91,7 @@ const SearchInput = () => {
           >
             <div className="w-full h-2 bg-white"></div>
             <ul>
-              {ProductsList.filter((product) =>
+              {filteredProducts.filter((product) =>
                 product.name.toLowerCase().includes(searchTerm.toLowerCase())
               ).map((item, index) => (
                 <li
@@ -97,7 +103,7 @@ const SearchInput = () => {
                     setChosen(true);
                   }}
                 >
-                  <p>{item.name}</p>
+                  <p>{item.name} </p>
                   <div>
                     <MdOutlineKeyboardArrowRight className="text-2xl" />
                   </div>

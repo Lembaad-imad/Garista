@@ -25,7 +25,7 @@ const SearchPage = () => {
                 <HistoryRecord />
               </div>
             </div>
-            <div className='w-11/12 mx-auto flex flex-col gap-4   mt-7 '>
+            <div className='w-11/12 mx-auto flex flex-col gap-4   mt-4 '>
               <p className='font-sans font-bold text-xl text-gray-700 '>You May Like</p>
               <div>
               <Products />

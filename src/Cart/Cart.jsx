@@ -110,11 +110,13 @@ const Cart = () => {
   style={noScrollbar}
 >
         {productshop.length === 0 ? (
-          <div className="flex flex-col  justify-center items-center w-full text-center">
+          <div className={`flex flex-col justify-center items-center w-full text-center ${!proccesShow ? 'h-[250px] overflow-y-scrollbg' :""}`}
+          // style={noScrollbar}
+          >
             <img
               src="images/Group.svg"
               alt="Cart is empty"
-              className="mx-auto w-44 "
+              className={`mx-auto  w-44 ${!proccesShow &&  'mt-5'}`}
             />
             <p className="text-xl font-sans font-bold mt-4">
               Your Cart is Empty

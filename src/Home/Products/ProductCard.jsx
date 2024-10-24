@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+  const handleClickProduct = () => {
+    navigate("/info ", { state: { product: product } });
+  };
   return (
-    <div className=" rounded-xl p-1  bg-white flex flex-col gap-2 shadow-md">
+    <div className=" rounded-xl p-1  h-52  bg-white flex flex-col gap-2 shadow-md" 
+      onClick={handleClickProduct}
+    >
      
       <img src={product.image} alt={product.name} className="w-full" />
       <div className="flex items-center justify-between w-11/12 ml-2">
