@@ -27,7 +27,6 @@ export default function SelectLanguage() {
     },
   ];
 
-  // Set default language to English if none is selected
   useEffect(() => {
     if (!selectedLanguage) {
       setSelectedLanguage("English");

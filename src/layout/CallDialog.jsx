@@ -51,14 +51,7 @@ const CallDialog = ({ setOpen, open }) => {
                   >
                     Confirme
                   </button>
-                  {/* <button
-              className="bg-transparent border-2 h-12 border-red-500 w-full sm:w-6/12 text-red-500 text-lg font-semibold py-2 rounded-lg"
-              onClick={() => {
-                navigate("/homepage");
-              }}
-            >
-              Back Home
-            </button> */}
+             
                 </div>
               </div>
             </div>

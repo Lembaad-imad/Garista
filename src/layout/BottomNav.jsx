@@ -33,7 +33,6 @@ const BottomNav = () => {
 
   const activeIcon = getActiveIcon();
 
-  // Close navButtons if clicked outside of it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navButtons && navButtonsRef.current && !navButtonsRef.current.contains(event.target)) {
@@ -41,10 +40,8 @@ const BottomNav = () => {
       }
     };
 
-    // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
     
-    // Clean up the event listener on component unmount
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };

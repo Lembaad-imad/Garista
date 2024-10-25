@@ -226,8 +226,8 @@ const InfoPage = () => {
             <p className="text-xl font-sans text-black font-bold">Note</p>
             <textarea
               name="comment"
-              value={comment} // Bind value to comment state
-              onChange={(e) => setComment(e.target.value)} // Update state on change
+              value={comment} 
+              onChange={(e) => setComment(e.target.value)}
               className="border p-2 rounded-md w-full mt-2"
               placeholder="Add a note..."
             />
@@ -295,14 +295,7 @@ const InfoPage = () => {
                       >
                         Go to Cart
                       </button>
-                      {/* <button
-                  className="bg-transparent border-2 h-12 border-red-500 w-full sm:w-6/12 text-red-500 text-lg font-semibold py-2 rounded-lg"
-                  onClick={() => {
-                    navigate("/homepage");
-                  }}
-                >
-                  Back Home
-                </button> */}
+                    
                     </div>
                   </div>
                 </div>

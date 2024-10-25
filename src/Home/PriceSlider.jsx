@@ -9,7 +9,6 @@ const PriceSlider = () => {
   };
 
   const calculateThumbPosition = (value) => {
-    // Calculate the left position as a percentage
     return `${(value / 100) * 100}%`;
   };
 
@@ -47,7 +46,7 @@ const PriceSlider = () => {
           style={{
             position: "absolute",
             left: calculateThumbPosition(1),
-            transform: "translateX(-50%)", // Center the label above the thumb
+            transform: "translateX(-50%)", 
           }}
         >
           1MAD
@@ -56,7 +55,7 @@ const PriceSlider = () => {
           style={{
             position: "absolute",
             left: calculateThumbPosition(values[0]),
-            transform: "translateX(-50%)", // Center the label above the thumb
+            transform: "translateX(-50%)",
           }}
         >
           {values[0]}MAD
@@ -65,7 +64,7 @@ const PriceSlider = () => {
           style={{
             position: "absolute",
             left: calculateThumbPosition(values[1]),
-            transform: "translateX(-50%)", // Center the label above the thumb
+            transform: "translateX(-50%)", 
           }}
         >
           {values[1]}MAD
@@ -74,7 +73,7 @@ const PriceSlider = () => {
           style={{
             position: "absolute",
             left: calculateThumbPosition(100),
-            transform: "translateX(-50%)", // Center the label above the thumb
+            transform: "translateX(-50%)", 
           }}
         >
           100MAD
