@@ -6,11 +6,11 @@ const HistoryDialog = ({ setOpen, open }) => {
   const navigate = useNavigate();
 
   const images = [
-    "images/worstNoCollor.svg",
-    "images/fineCollor.svg",
-    "images/NeutreCollor.svg",
-    "images/GoodCollor.svg",
-    "images/loveCollor.svg",
+    "images/emoji1.svg",
+    "images/emoji2.svg",
+    "images/emoji3.svg",
+    "images/emoji4.svg",
+    "images/emoji5.svg",
   ];
 
   const handleClickFeedBack = (index) => {
@@ -69,11 +69,11 @@ const HistoryDialog = ({ setOpen, open }) => {
                       >
                         <img src={image} alt="" />
                         {selectedEmoji === index && (
-                          <div >
+                          <div className='' >
                           <img
                             src="/images/fed.svg"
                             alt="Selected"
-                            className="absolute bottom-11 z-100 -right-2 w-5 h-5"
+                            className="absolute bg-transparent rounded-full bottom-11 z-100 -right-2 w-5 h-5"
                           />
                           </div>
                         )}
