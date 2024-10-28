@@ -94,7 +94,7 @@ const BottomNav = () => {
                 <img
                   src="images/history.svg"
                   alt="History"
-                  // onClick={() => setOpenHistoryDialog(true)}
+                  onClick={() => setOpenHistoryDialog(true)}
                 />
               </div>
             </span>

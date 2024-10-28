@@ -13,6 +13,7 @@ import SearchPage from './searchPage/SearchPage'
 import InfoPage from './Infos pages/InfoPage'
 import Cart from './Cart/Cart'
 import Details from './Details/Details'
+import FeedBack from './feedback/FeedBack'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/info" element={<InfoPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/details" element={<Details />} />
+        <Route path="/feedback" element={<FeedBack />} />
       </Routes>
     </Router>
     </>
